@@ -1,0 +1,12 @@
+{
+    "name": "julian1729/julianhernandez",
+    "authors": [
+        {
+            "name": "Julian1729",
+            "email": "hernandez.julian17@gmail.com"
+        }
+    ],
+    "require": {
+        "pug-php/pug": "^3.2"
+    }
+}
