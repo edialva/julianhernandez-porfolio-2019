@@ -11,8 +11,15 @@ html
     //- Open Graph Tags
     meta(name="og:title" content="Julian Hernandez | Full-Stack Developer")
     meta(name="og:image" content= wp_get_attachment_image_src(9, null, null)[0])
+    //- Stylesheets
+    link(href=template_directory_uri + '/assets/css/dist/main.css' rel="stylesheet" type="text/css")
+    
       
   body
+    
+    p= template_directory_uri + '/'
+    
+    script(src=template_directory_uri + '/assets/js/dist/landing.bundle.js' type="text/javascript")
     
       
   

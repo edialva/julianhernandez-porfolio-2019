@@ -1,14 +1,12 @@
 const gulp = require('gulp');
 const path = require('path');
-// const pump = require('pump');
-// const csso = require('gulp-csso');
 const sass = require('gulp-sass');
 const es = require('event-stream');
 const rename = require('gulp-rename');
-// const nodemon = require('gulp-nodemon');
 const browserify = require('browserify');
 const source = require('vinyl-source-stream');
 const autoprefixer = require('gulp-autoprefixer');
+const browserSync = require('browser-sync').create();
 
 const CONFIG = {
   js: {
@@ -19,6 +17,9 @@ const CONFIG = {
   css: {
     sassGlob: './assets/css/src/**/*.sass',
     outputDir: './assets/css/dist/',
+  },
+  html: {
+    pugGlob: './views/**/*.pug',
   }
 };
 
@@ -36,7 +37,8 @@ gulp.task('bundle-js', function(){
       .pipe(rename({
         extname: '.bundle.js'
       }))
-      .pipe(gulp.dest(CONFIG.js.outputDir));
+      .pipe(gulp.dest(CONFIG.js.outputDir))
+      .pipe(browserSync.stream());
   });
 
   // create a merged stream
@@ -60,9 +62,30 @@ gulp.task('build-css-development', function(){
   return gulp.src(CONFIG.css.sassGlob)
   .pipe(sass().on('error', sass.logError))
   .pipe(autoprefixer())
-  .pipe(gulp.dest(CONFIG.css.outputDir));
+  .pipe(gulp.dest(CONFIG.css.outputDir))
+  .pipe(browserSync.stream());
 });
 
+// gulp.task('browser-sync', function() {
+//     browserSync.init({
+//         proxy: "julian.local",
+//     });
+// });
+
+// Static Server + watching scss/html files
+gulp.task('serve', ['bundle-js', 'build-css-development'], function() {
+
+    browserSync.init({
+        proxy: "julian.local",
+    });
+
+    gulp.watch('./assets/js/src/pages/**', ['bundle-js']);
+
+    gulp.watch(CONFIG.css.sassGlob, ['build-css-development']);
+
+    gulp.watch(CONFIG.html.pugGlob).on('change', browserSync.reload);
+
+});
 
 /**
  * Run necessary build tasks, then watch for changes
