@@ -19,7 +19,7 @@ const CONFIG = {
     outputDir: './assets/css/dist/',
   },
   html: {
-    pugGlob: './views/**/*.pug',
+    pugGlob: './views/*.pug',
   }
 };
 

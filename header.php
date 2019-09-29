@@ -9,4 +9,5 @@
     <meta name="og:title" content="Julian Hernandez | Full-Stack Developer">
     <?php wp_head(); ?>
   </head>
-</html>
+
+  <body>
