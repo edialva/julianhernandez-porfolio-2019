@@ -1,5 +1,7 @@
 <?php
 
+require_once('inc/helpers.php');
+
 $data = array(
 
   'BASE_URI' => site_url('/'),
@@ -12,7 +14,6 @@ $data = array(
   ],
 
   'wp_title' => wp_title('', false),
-  'wp_head' => output_buffer_contents(wp_head),
   'wp_footer' => output_buffer_contents(wp_footer),
 
   'template_directory_uri' => get_template_directory_uri(),

@@ -22,6 +22,8 @@ if ( have_posts() ) :
 
 endif;
 
-// echo print_r(wp_get_attachment_image_src(9));
+get_header();
 
-echo $pug->renderFile('front-page', $data, $options);
+echo $pug->renderFile('index', $data, $options);
+
+get_footer();
