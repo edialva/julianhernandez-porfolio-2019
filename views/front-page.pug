@@ -1,15 +1,19 @@
 extends index.pug
 
+include inc/mixins.pug
+
 block content
   
-  section#above-the-fold
+  //- Landing page - full height of screen on load
+  section#above-the-fold.no-padding
     
     .center
       
       h1 Hey there! I'm #[span Julian Hernandez]. #[br] Nice to meet you!
       a.cta.light(href="#about") Get to know me!
   
-  section#header
+  //- Header with navigation
+  section#header.no-padding
     
     .navigation
       
@@ -23,31 +27,71 @@ block content
         li
           a(href="#") Contact
   
+  //- About Julian
   section#about
-    
-    #image-and-social
+          
+    .row
       
-      .row
+      .col-2.vertical
+        img.profile-picture(src=template_directory_uri + '/assets/images/julianhernandez_compressed_415x450.jpg')
+        .social-media-row
+          ul
+            li
+              a
+                img(src=template_directory_uri + '/assets/images/social-media/dark/github.svg' alt="Julian Hernandez Github Profile" title="julian1729 Github")
+            li
+              a
+                img(src=template_directory_uri + '/assets/images/social-media/dark/instagram.svg' alt="Julian Hernandez Instragram Profile" title="Julian's Instagram")
+            li
+              a
+                img(src=template_directory_uri + '/assets/images/social-media/dark/twitter.svg' alt="Julian Hernandez Twitter Profile" title="jherwebsites Twitter")
+            li
+              a
+                img(src=template_directory_uri + '/assets/images/social-media/dark/linkedin.svg' alt="Julian Hernandez LinkedIn Profile" title="Julian Hernandez on LinkedIn")
+      
+      .col-2
+        .about-text
+          h2 Hello
+          p I am a full stack web developer in Philadelphia. I work for #[a(href="http://weare.pbmarketingllc.com/" target="_blank") Premiere Brand], a full service creative studio that specializes in brand strategy and visual creation.
+    
+    .row
+      
+      .col-4.block
         
-        .col-2.vertical
-          img.profile-picture(src=template_directory_uri + '/assets/images/julianhernandez.jpeg')
-          .social-media-row
-            ul
-              li
-                a
-                  img(src=template_directory_uri + '/assets/images/social-media/dark/github.svg' alt="Julian Hernandez Github Profile" title="julian1729 Github")
-              li
-                a
-                  img(src=template_directory_uri + '/assets/images/social-media/dark/instagram.svg' alt="Julian Hernandez Instragram Profile" title="Julian's Instagram")
-              li
-                a
-                  img(src=template_directory_uri + '/assets/images/social-media/dark/twitter.svg' alt="Julian Hernandez Twitter Profile" title="jherwebsites Twitter")
-              li
-                a
-                  img(src=template_directory_uri + '/assets/images/social-media/dark/linkedin.svg' alt="Julian Hernandez LinkedIn Profile" title="Julian Hernandez on LinkedIn")
+        +skill('HTML', 75)
         
-        .col-2
-          .about-text
-            h2 Hello
-            p I am a full stack web developer in Philadelphia. I work for #[a(href="http://weare.pbmarketingllc.com/" target="_blank") Premiere Brand], a full service creative studio that specializes in brand strategy and visual creation.
+        +skill('CSS', 85)
+        
+        +skill('Javascript', 75)
+  
+  //- Portfolio work
+  section#portfolio
+    
+    .row
+      
+      h2.section-heading Portfolio
+    
+    .row.block
+        
+      .portfolio-container
+        
+        .portfolio-item
+            .logo
+              img(src="http://julian.local/wp-content/uploads/2019/09/logo_white.png")
+            span.type-badge Node.js
+          
+        .portfolio-item(style="background: #F1B3B2")
+          .logo
+            img(src="http://julian.local/wp-content/uploads/2019/09/princessparties.png")
+          span.type-badge Node.js
+          
+        .portfolio-item
+          .logo
+            img(src="http://julian.local/wp-content/uploads/2019/09/logo_white.png")
+          span.type-badge Node.js
+
+          
+          
+        
+        
     

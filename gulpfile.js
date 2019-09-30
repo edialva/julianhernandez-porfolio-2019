@@ -19,10 +19,9 @@ const CONFIG = {
     outputDir: './assets/css/dist/',
   },
   html: {
-    pugGlob: './views/*.pug',
+    pugGlob: './views/**/*.pug',
   }
 };
-
 
 /**
  * Bundle all javascript files
@@ -65,12 +64,6 @@ gulp.task('build-css-development', function(){
   .pipe(gulp.dest(CONFIG.css.outputDir))
   .pipe(browserSync.stream());
 });
-
-// gulp.task('browser-sync', function() {
-//     browserSync.init({
-//         proxy: "julian.local",
-//     });
-// });
 
 // Static Server + watching scss/html files
 gulp.task('serve', ['bundle-js', 'build-css-development'], function() {

@@ -70,7 +70,8 @@ html, body {
   font-family: 'Oswald', sans-serif;
   font-smooth: antialiased;
   font-size: 16px;
-  box-sizing: border-box; }
+  box-sizing: border-box;
+  overflow: auto; }
 
 a {
   text-decoration: none;
@@ -80,7 +81,11 @@ a {
  * Columns
  * */
 .row {
-  display: flex; }
+  display: flex;
+  margin: 0 auto;
+  max-width: 900px; }
+  .row.block {
+    display: block; }
   .row [class^="col-"] {
     padding: 3em;
     display: flex;
@@ -100,6 +105,14 @@ a {
     width: 75%; }
   .row .col-4 {
     width: 100%; }
+
+/**
+ * Sections
+ * */
+section {
+  padding: 3em; }
+  section.no-padding {
+    padding: 0; }
 
 /**
  * Above the fold
@@ -143,13 +156,12 @@ a {
         color: #FFF; }
 
 #about {
-  background: #21A0A0;
-  padding: 3em; }
-  #about #image-and-social .profile-picture {
+  background: #21A0A0; }
+  #about .profile-picture {
     height: 450px;
     width: auto;
     margin-bottom: 20px; }
-  #about #image-and-social .about-text p {
+  #about .about-text p {
     color: #FFF; }
 
 /**
@@ -166,6 +178,80 @@ a {
       height: 30px; }
 
 /**
+ * Skill
+ * */
+.skill {
+  display: flex;
+  font-weight: 300;
+  color: #FFF;
+  width: 100%;
+  margin-bottom: 30px; }
+  .skill:last-of-type {
+    margin-bottom: 0; }
+  .skill .name, .skill .percentage {
+    background: #454545;
+    text-align: center;
+    padding: 10px;
+    width: 80px; }
+  .skill .name {
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px; }
+  .skill .bar-container {
+    flex-grow: 1;
+    background: #CCCCCC;
+    position: relative; }
+    .skill .bar-container .bar {
+      background: #969696;
+      height: 100%; }
+  .skill .percentage {
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px; }
+
+.portfolio-container {
+  display: flex;
+  max-width: 100%; }
+  .portfolio-container .portfolio-item {
+    background: tomato;
+    flex: 1 0 0;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative; }
+    .portfolio-container .portfolio-item:before {
+      content: '';
+      float: left;
+      padding-top: 100%; }
+    .portfolio-container .portfolio-item .logo {
+      width: 55%;
+      height: 55%;
+      padding: 10px;
+      position: absolute;
+      top: 0;
+      left: 0;
+      bottom: 15px;
+      right: 0;
+      margin: auto;
+      display: flex;
+      align-items: center;
+      justify-content: center; }
+      .portfolio-container .portfolio-item .logo img {
+        width: 100%;
+        max-width: 100%;
+        height: auto; }
+    .portfolio-container .portfolio-item span.type-badge {
+      border-radius: 6px;
+      padding: 10px 25px;
+      position: absolute;
+      margin: 0 auto;
+      left: auto;
+      right: auto;
+      bottom: 15px;
+      background: #454545;
+      color: #FFF;
+      font-size: 0.8em; }
+
+/**
  * Text Styles
  * */
 h2 {
@@ -173,6 +259,8 @@ h2 {
   font-weight: 700;
   text-transform: uppercase;
   color: #454545; }
+  h2.section-heading {
+    margin-bottom: 30px; }
 
 p {
   font-size: 1.6em;

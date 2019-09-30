@@ -1,0 +1,49 @@
+.portfolio-container
+  display: flex
+  max-width: 100%
+
+  .portfolio-item
+    background: tomato
+    flex: 1 0 0
+    height: auto
+    display: flex
+    justify-content: center
+    align-items: center
+    position: relative
+
+    &:before
+      content: ''
+      float: left
+      padding-top: 100%
+
+    .logo
+      width: 55%
+      height: 55%
+      padding: 10px
+      position: absolute
+      top: 0
+      left: 0
+      bottom: 15px
+      right: 0
+      margin: auto
+      display: flex
+      align-items: center
+      justify-content: center
+
+      img
+        width: 100%
+        max-width: 100%
+        height: auto
+
+    span.type-badge
+      border-radius: 6px
+      padding: 10px 25px
+      position: absolute
+      margin: 0 auto
+      left: auto
+      right: auto
+      bottom: 15px
+      background: $primary_gray
+      color: $white
+      font-size: 0.8em
+      // font-weight: 300

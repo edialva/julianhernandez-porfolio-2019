@@ -1,0 +1,37 @@
+/**
+ * Skill
+ *
+
+.skill
+  display: flex
+  font-weight: 300
+  color: $white
+  width: 100%
+  margin-bottom: 30px
+
+  &:last-of-type
+    margin-bottom: 0
+
+  %skill-end
+    background: $primary_gray
+    text-align: center
+    padding: 10px
+    width: 80px
+
+  .name
+    @extend %skill-end
+    border-top-left-radius: 5px
+    border-bottom-left-radius: 5px
+
+  .bar-container
+    flex-grow: 1
+    background: #CCCCCC
+    position: relative
+    .bar
+      background: #969696
+      height: 100%
+
+  .percentage
+    @extend %skill-end
+    border-top-right-radius: 5px
+    border-bottom-right-radius: 5px

@@ -9,6 +9,7 @@ html, body
   font-smooth: antialiased
   font-size: 16px
   box-sizing: border-box
+  overflow: auto
 
 a
   text-decoration: none
@@ -20,6 +21,11 @@ a
 
 .row
   display: flex
+  margin: 0 auto
+  max-width: 900px
+
+  &.block
+    display: block
 
   [class^="col-"]
     padding: 3em
@@ -46,3 +52,13 @@ a
 
   .col-4
     width: 100%
+
+/**
+ * Sections
+ *
+
+section
+  padding: 3em
+
+  &.no-padding
+    padding: 0
