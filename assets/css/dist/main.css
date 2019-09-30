@@ -1,2 +1,181 @@
+/**
+ * Julian Hernandez main file
+ * */
+.cta {
+  border: 4px solid #51BBFE;
+  font-size: 1.2em;
+  display: table;
+  padding: 14px 25px;
+  transition: background 300ms;
+  cursor: pointer; }
+  .cta.light {
+    color: #FFF; }
+  .cta.dark {
+    color: #454545; }
+  .cta:hover {
+    background: #51BBFE; }
+
+/* http://meyerweb.com/eric/tools/css/reset/
+   v2.0 | 20110126
+   License: none (public domain) */
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline; }
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block; }
+
+body {
+  line-height: 1; }
+
+ol, ul {
+  list-style: none; }
+
+blockquote, q {
+  quotes: none; }
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: '';
+  content: none; }
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0; }
+
+/**
+ * Miscellaneous Styles
+ * */
+html, body {
+  height: 100%;
+  min-height: 100%;
+  font-family: 'Oswald', sans-serif;
+  font-smooth: antialiased;
+  font-size: 16px;
+  box-sizing: border-box; }
+
+a {
+  text-decoration: none;
+  color: inherit; }
+
+/**
+ * Columns
+ * */
+.row {
+  display: flex; }
+  .row [class^="col-"] {
+    padding: 3em;
+    display: flex;
+    justify-content: center;
+    align-items: center; }
+    .row [class^="col-"].block {
+      display: block !important; }
+    .row [class^="col-"].vertical {
+      flex-direction: column; }
+    .row [class^="col-"].horizontal {
+      flex-direction: row; }
+  .row .col-1 {
+    width: 25%; }
+  .row .col-2 {
+    width: 50%; }
+  .row .col-3 {
+    width: 75%; }
+  .row .col-4 {
+    width: 100%; }
+
+/**
+ * Above the fold
+ * */
+#above-the-fold {
+  height: 100vh;
+  width: 100vw;
+  background: #454545;
+  display: flex;
+  justify-content: center;
+  align-items: center; }
+  #above-the-fold .center {
+    display: table; }
+    #above-the-fold .center h1 {
+      color: #FFF;
+      font-size: 3rem;
+      line-height: 4rem; }
+      #above-the-fold .center h1 span {
+        color: #51BBFE; }
+    #above-the-fold .center .cta {
+      margin-top: 10px; }
+
+/**
+ * Heading
+ * */
+#header {
+  height: 80px;
+  border-top: 6px solid #51BBFE;
+  background: #454545;
+  border-bottom: solid 3px #FFF; }
+  #header .navigation ul {
+    margin-left: 8em;
+    font-size: 1.2em; }
+    #header .navigation ul li {
+      display: inline-block;
+      margin-right: 6em;
+      line-height: 80px; }
+      #header .navigation ul li:last-of-type {
+        margin-right: 0; }
+      #header .navigation ul li a {
+        color: #FFF; }
+
+#about {
+  background: #21A0A0;
+  padding: 3em; }
+  #about #image-and-social .profile-picture {
+    height: 450px;
+    width: auto;
+    margin-bottom: 20px; }
+  #about #image-and-social .about-text p {
+    color: #FFF; }
+
+/**
+ * Social Media button row
+ * */
+.social-media-row ul {
+  display: flex; }
+  .social-media-row ul li {
+    margin-right: 20px; }
+    .social-media-row ul li:last-of-type {
+      margin-right: 0; }
+    .social-media-row ul li img {
+      width: 30px;
+      height: 30px; }
+
+/**
+ * Text Styles
+ * */
+h2 {
+  font-size: 2.3em;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: #454545; }
+
 p {
-  color: blue; }
+  font-size: 1.6em;
+  line-height: 2em; }
+  p a {
+    color: #5DFDCB; }

@@ -15,7 +15,7 @@ const CONFIG = {
     pages: ['landing.js'],
   },
   css: {
-    sassGlob: './assets/css/src/**/*.sass',
+    sassGlob: './assets/css/src/[^_]*',
     outputDir: './assets/css/dist/',
   },
   html: {
@@ -81,7 +81,7 @@ gulp.task('serve', ['bundle-js', 'build-css-development'], function() {
 
     gulp.watch('./assets/js/src/pages/**', ['bundle-js']);
 
-    gulp.watch(CONFIG.css.sassGlob, ['build-css-development']);
+    gulp.watch('./assets/css/src/**/*', ['build-css-development']);
 
     gulp.watch(CONFIG.html.pugGlob).on('change', browserSync.reload);
 

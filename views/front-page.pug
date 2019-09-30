@@ -2,11 +2,52 @@ extends index.pug
 
 block content
   
-  .above-the-fold
+  section#above-the-fold
     
     .center
       
-      p Hey there! I'm 
-        span Julian Hernandez.
-      p Nice to meet you!
-      a.cta Get to know me!
+      h1 Hey there! I'm #[span Julian Hernandez]. #[br] Nice to meet you!
+      a.cta.light(href="#about") Get to know me!
+  
+  section#header
+    
+    .navigation
+      
+      ul
+        li
+          a(href="#") Home
+        li
+          a(href="#about") About
+        li
+          a(href="#") Portfolio
+        li
+          a(href="#") Contact
+  
+  section#about
+    
+    #image-and-social
+      
+      .row
+        
+        .col-2.vertical
+          img.profile-picture(src=template_directory_uri + '/assets/images/julianhernandez.jpeg')
+          .social-media-row
+            ul
+              li
+                a
+                  img(src=template_directory_uri + '/assets/images/social-media/dark/github.svg' alt="Julian Hernandez Github Profile" title="julian1729 Github")
+              li
+                a
+                  img(src=template_directory_uri + '/assets/images/social-media/dark/instagram.svg' alt="Julian Hernandez Instragram Profile" title="Julian's Instagram")
+              li
+                a
+                  img(src=template_directory_uri + '/assets/images/social-media/dark/twitter.svg' alt="Julian Hernandez Twitter Profile" title="jherwebsites Twitter")
+              li
+                a
+                  img(src=template_directory_uri + '/assets/images/social-media/dark/linkedin.svg' alt="Julian Hernandez LinkedIn Profile" title="Julian Hernandez on LinkedIn")
+        
+        .col-2
+          .about-text
+            h2 Hello
+            p I am a full stack web developer in Philadelphia. I work for #[a(href="http://weare.pbmarketingllc.com/" target="_blank") Premiere Brand], a full service creative studio that specializes in brand strategy and visual creation.
+    
