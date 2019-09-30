@@ -83,7 +83,8 @@ a {
 .row {
   display: flex;
   margin: 0 auto;
-  max-width: 900px; }
+  max-width: 900px;
+  overflow-x: hidden; }
   .row.block {
     display: block; }
   .row [class^="col-"] {
@@ -222,6 +223,11 @@ section {
       content: '';
       float: left;
       padding-top: 100%; }
+    .portfolio-container .portfolio-item > a {
+      display: block;
+      height: 100%;
+      width: 100%;
+      z-index: 1; }
     .portfolio-container .portfolio-item .logo {
       width: 55%;
       height: 55%;
