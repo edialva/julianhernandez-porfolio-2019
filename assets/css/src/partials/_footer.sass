@@ -1,0 +1,53 @@
+/**
+ * Site footer
+ *
+
+section#footer
+  background: $dark_gray
+  padding-bottom: 8em
+  border-top: $primary_blue solid 5px
+  color: $white
+  position: relative
+  z-index: 2
+
+  p.copyright
+    font-size: 1em
+
+  footer
+    display: flex
+    justify-content: space-between
+
+  $scrollButtonSize: 50px
+  #scroll-button
+    display: inline-block
+    cursor: pointer
+    background: $primary_blue
+    height: $scrollButtonSize
+    width: $scrollButtonSize * 2
+    border-top-left-radius: $scrollButtonSize * 2
+    border-top-right-radius: $scrollButtonSize * 2
+    position: absolute
+    top: -$scrollButtonSize
+    left: 0
+    right: 0
+    margin: 0 auto
+
+    img
+      width: 25px
+      height: 25px
+      display: block
+      margin: 0 auto
+      position: relative
+      top: 15px
+
+  // full circle
+  // #scroll-button
+  //   height: 100px
+  //   width: 100px
+  //   border-radius: 100%
+  //   background: $primary_blue
+  //   position: absolute
+  //   top: -50px
+  //   right: 0
+  //   left: 0
+  //   margin: 0 auto
