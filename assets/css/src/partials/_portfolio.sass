@@ -1,15 +1,15 @@
 .portfolio-container
-  display: flex
   max-width: 100%
 
   .portfolio-item
     background: tomato
     flex: 1 0 0
     height: auto
-    display: flex
+    display: inline-flex
     justify-content: center
     align-items: center
     position: relative
+    width: 33.3%
 
     &:before
       content: ''
@@ -23,8 +23,8 @@
       z-index: 1
 
     .logo
-      width: 55%
-      height: 55%
+      width: 50%
+      height: 50%
       padding: 10px
       position: absolute
       top: 0
@@ -52,4 +52,15 @@
       background: $primary_gray
       color: $white
       font-size: 0.8em
-      // font-weight: 300
+
+// thinner than 550px
+@media screen and (max-width: 725px)
+
+  .portfolio-item
+    width: 50% !important
+
+// thinner than 725px
+@media screen and (max-width: 550px)
+
+  .portfolio-item
+    width: 100% !important

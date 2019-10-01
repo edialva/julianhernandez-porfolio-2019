@@ -8,12 +8,15 @@ html, body
   font-family: 'Oswald', sans-serif
   font-smooth: antialiased
   font-size: 16px
-  box-sizing: border-box
+  // box-sizing: border-box
   overflow: auto
 
 a
   text-decoration: none
   color: inherit
+
+*
+  box-sizing: border-box
 
 /**
  * Columns
@@ -61,5 +64,9 @@ a
 section
   padding: 3em
 
-  &.no-padding
-    padding: 0
+/**
+ * General
+ */
+
+.no-padding
+  padding: 0 !important

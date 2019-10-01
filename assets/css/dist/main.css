@@ -1,20 +1,9 @@
 /**
  * Julian Hernandez main file
  * */
-.cta {
-  border: 4px solid #51BBFE;
-  font-size: 1.2em;
-  display: table;
-  padding: 14px 25px;
-  transition: background 300ms;
-  cursor: pointer; }
-  .cta.light {
-    color: #FFF; }
-  .cta.dark {
-    color: #454545; }
-  .cta:hover {
-    background: #51BBFE; }
-
+/**
+ * Universal Mixins
+ * */
 /* http://meyerweb.com/eric/tools/css/reset/
    v2.0 | 20110126
    License: none (public domain) */
@@ -61,6 +50,169 @@ table {
   border-collapse: collapse;
   border-spacing: 0; }
 
+.cta {
+  border: 4px solid #51BBFE;
+  font-size: 1.2em;
+  display: table;
+  padding: 14px 25px;
+  transition: background 300ms;
+  cursor: pointer; }
+  .cta.light {
+    color: #FFF; }
+  .cta.dark {
+    color: #454545; }
+  .cta:hover {
+    background: #51BBFE; }
+
+/**
+ * General form styles
+ * */
+textarea {
+  font-size: 1em;
+  outline: none;
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  color: inherit;
+  border-radius: 0;
+  border: none;
+  background-color: transparent;
+  color: #FFF;
+  margin: 25px 0;
+  background: transparent;
+  max-width: 100%;
+  width: 100%;
+  border: 3px solid #51BBFE;
+  padding: 19px;
+  display: inline-block;
+  min-height: 150px; }
+  textarea::-webkit-input-placeholder {
+    color: #FFF;
+    font-size: 0.8em;
+    font-family: 'Oswald', sans-serif;
+    font-weight: 300; }
+  textarea::-moz-placeholder {
+    color: #FFF;
+    font-size: 0.8em;
+    font-family: 'Oswald', sans-serif;
+    font-weight: 300; }
+  textarea:-ms-input-placeholder {
+    color: #FFF;
+    font-size: 0.8em;
+    font-family: 'Oswald', sans-serif;
+    font-weight: 300; }
+  textarea::-ms-input-placeholder {
+    color: #FFF;
+    font-size: 0.8em;
+    font-family: 'Oswald', sans-serif;
+    font-weight: 300; }
+  textarea::placeholder {
+    color: #FFF;
+    font-size: 0.8em;
+    font-family: 'Oswald', sans-serif;
+    font-weight: 300; }
+
+.text-input-container {
+  width: 100%;
+  position: relative;
+  margin: 10px 0;
+  padding-top: 0.8em; }
+  .text-input-container:first-child {
+    margin-top: 0; }
+  .text-input-container:last-child {
+    margin-bottom: 0; }
+  .text-input-container .input-element {
+    position: relative;
+    height: 2em; }
+    .text-input-container .input-element.error .border {
+      background: red; }
+    .text-input-container .input-element.error label {
+      color: red; }
+    .text-input-container .input-element .border {
+      height: 3px;
+      background: #51BBFE;
+      width: 100%;
+      position: absolute;
+      bottom: 0;
+      left: 0; }
+    .text-input-container .input-element input[type=text], .text-input-container .input-element input[type=password], .text-input-container .input-element input[type=number] {
+      font-size: 1em;
+      outline: none;
+      -webkit-appearance: none;
+         -moz-appearance: none;
+              appearance: none;
+      color: inherit;
+      border-radius: 0;
+      border: none;
+      background-color: transparent;
+      position: absolute;
+      color: #FFF;
+      width: 100%;
+      left: 0;
+      bottom: 0;
+      display: block;
+      font-size: 1em;
+      padding: 5px 0 5px 0; }
+    .text-input-container .input-element .border {
+      transition: all 0.3s; }
+    .text-input-container .input-element label {
+      position: absolute;
+      left: 0;
+      bottom: 0.6em;
+      display: block;
+      color: #FFF;
+      font-size: 0.8em;
+      font-weight: 300;
+      pointer-events: none;
+      transition: all 0.3s; }
+      .text-input-container .input-element label.float {
+        bottom: 2.2em; }
+  .text-input-container .input-error-messages {
+    margin-top: 10px; }
+    .text-input-container .input-error-messages p {
+      font-size: 0.5em;
+      text-transform: lowercase;
+      font-weight: 300;
+      color: red;
+      margin: 4px 0; }
+      .text-input-container .input-error-messages p:last-child {
+        margin-bottom: 0; }
+  .text-input-container.dark label {
+    color: #454545; }
+
+button.submit {
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  color: inherit;
+  outline: none;
+  border: none;
+  cursor: pointer;
+  border-radius: 100%;
+  height: 50px;
+  width: 50px;
+  background: transparent;
+  border: 3px solid #51BBFE;
+  transition: background 300ms;
+  display: table;
+  margin-left: auto;
+  position: relative; }
+  button.submit:hover {
+    background: #51BBFE; }
+  button.submit:hover img {
+    left: 15px; }
+  button.submit img {
+    transition: all 500ms;
+    position: absolute;
+    left: 3px;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    display: block;
+    margin: auto;
+    height: 20px;
+    width: 20px; }
+
 /**
  * Miscellaneous Styles
  * */
@@ -70,12 +222,14 @@ html, body {
   font-family: 'Oswald', sans-serif;
   font-smooth: antialiased;
   font-size: 16px;
-  box-sizing: border-box;
   overflow: auto; }
 
 a {
   text-decoration: none;
   color: inherit; }
+
+* {
+  box-sizing: border-box; }
 
 /**
  * Columns
@@ -112,8 +266,12 @@ a {
  * */
 section {
   padding: 3em; }
-  section.no-padding {
-    padding: 0; }
+
+/**
+ * General
+ */
+.no-padding {
+  padding: 0 !important; }
 
 /**
  * Above the fold
@@ -209,16 +367,16 @@ section {
     border-bottom-right-radius: 5px; }
 
 .portfolio-container {
-  display: flex;
   max-width: 100%; }
   .portfolio-container .portfolio-item {
     background: tomato;
     flex: 1 0 0;
     height: auto;
-    display: flex;
+    display: inline-flex;
     justify-content: center;
     align-items: center;
-    position: relative; }
+    position: relative;
+    width: 33.3%; }
     .portfolio-container .portfolio-item:before {
       content: '';
       float: left;
@@ -229,8 +387,8 @@ section {
       width: 100%;
       z-index: 1; }
     .portfolio-container .portfolio-item .logo {
-      width: 55%;
-      height: 55%;
+      width: 50%;
+      height: 50%;
       padding: 10px;
       position: absolute;
       top: 0;
@@ -257,6 +415,62 @@ section {
       color: #FFF;
       font-size: 0.8em; }
 
+@media screen and (max-width: 725px) {
+  .portfolio-item {
+    width: 50% !important; } }
+
+@media screen and (max-width: 550px) {
+  .portfolio-item {
+    width: 100% !important; } }
+
+/**
+ * Contact section
+ * */
+section#contact {
+  background: #454545;
+  padding-bottom: 6em; }
+  section#contact .text p {
+    color: #51BBFE; }
+  section#contact .text .contact-details {
+    margin: 20px 0; }
+    section#contact .text .contact-details a {
+      display: table;
+      margin: 10px 0; }
+  section#contact form#contact-form {
+    width: 100%; }
+
+/**
+ * Download Button
+ * */
+.download {
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+  text-align: center;
+  display: flex; }
+  .download span.download {
+    font-weight: 300;
+    display: inline-block;
+    background: #EEEEEE;
+    font-size: 0.8em;
+    flex-grow: 1;
+    height: 54px;
+    vertical-align: middle;
+    line-height: 54px; }
+  .download .icon {
+    display: inline-block;
+    vertical-align: middle;
+    height: 54px;
+    width: 54px;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+    overflow: hidden; }
+    .download .icon img {
+      height: 54px;
+      width: 100%; }
+
 /**
  * Text Styles
  * */
@@ -264,12 +478,16 @@ h2 {
   font-size: 2.3em;
   font-weight: 700;
   text-transform: uppercase;
-  color: #454545; }
+  color: #454545;
+  margin-bottom: 20px; }
+  h2.light {
+    color: #FFF; }
   h2.section-heading {
     margin-bottom: 30px; }
 
 p {
-  font-size: 1.6em;
+  font-size: 1.3em;
   line-height: 2em; }
-  p a {
-    color: #5DFDCB; }
+
+a {
+  color: #5DFDCB; }
