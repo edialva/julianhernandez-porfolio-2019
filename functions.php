@@ -1,7 +1,7 @@
 <?php
 
 /**
- * Enqueue Javascripts
+ * Enqueue Scripts
  */
 function jh_enqueue_scripts(){
 
@@ -17,3 +17,14 @@ function jh_enqueue_scripts(){
 }
 
 add_action('wp_enqueue_scripts', 'jh_enqueue_scripts');
+
+/**
+ * Theme Support
+ */
+// Add Thumbnail Support
+add_theme_support('post-thumbnails');
+
+/**
+ * Functions
+ */
+require('functions/custom-post-types.php');
