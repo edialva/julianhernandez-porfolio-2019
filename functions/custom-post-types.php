@@ -5,7 +5,7 @@
  */
 
 // PORTFOLIO POST TYPE
-function portfolio_register(){
+function jh_portfolio_register(){
 
   $labels = array(
 		'name' => _x('Portfolio', 'post type general name'),
@@ -38,52 +38,56 @@ function portfolio_register(){
 
 }
 
-add_action('init', 'portfolio_register');
+add_action('init', 'jh_portfolio_register');
 
 // meta fields
 
-function year_completed(){
+function jh_year_completed(){
   global $post;
   $custom = get_post_custom($post->ID);
-  $yearCompleted = $custom["year_completed"][0];
+  $yearCompleted = $custom['year_completed'][0];
   ?>
-  <input name="year_completed" value="<?php echo $yearCompleted; ?>" />
+  <input name='year_completed' value='<?php echo $yearCompleted; ?>' />
   <?php
 }
 
-function role(){
+function jh_role(){
   global $post;
   $custom = get_post_custom($post->ID);
-  $year_completed = $custom["role"][0];
+  $role = $custom['role'][0];
   ?>
-  <p><input name="role" value="<?php echo $year_completed; ?>" /></p>
+  <p><input name='role' value='<?php echo $role; ?>' /></p>
   <?php
 }
 
-function add_meta_boxes(){
-
-  add_meta_box('year_completed_meta', 'Year Completed', 'year_completed', 'portfolio', 'side', 'low');
-  add_meta_box('role_meta', 'Role', 'role', 'portfolio', 'normal', 'low');
-  add_meta_box( 'project_logo', 'Portfolio Logo', 'logo', 'portfolio', 'side', 'low');
-
-}
-
-add_action('admin_init', 'add_meta_boxes');
-
-function save_details(){
+function jh_background_color(){
   global $post;
-
-  update_post_meta($post->ID, "year_completed", $_POST["year_completed"]);
-  update_post_meta($post->ID, "role", $_POST["role"]);
+  $custom = get_post_custom($post->ID);
+  $bgColor = $custom['background_color'][0];
+  ?>
+  <input name='background_color' value='<?php echo $bgColor; ?>'/>
+  <?php
 }
 
-add_action('save_post', 'save_details');
+function jh_add_meta_boxes(){
+  add_meta_box('year_completed_meta', 'Year Completed', 'jh_year_completed', 'portfolio', 'side', 'low');
+  add_meta_box('role_meta', 'Role', 'jh_role', 'portfolio', 'normal', 'low');
+  add_meta_box('background_color_meta', 'Background Color', 'jh_background_color', 'portfolio', 'side', 'low');
+}
+
+add_action('admin_init', 'jh_add_meta_boxes');
+
+function jh_save_details(){
+  global $post;
+  update_post_meta($post->ID, 'year_completed_', $_POST['year_completed']);
+  update_post_meta($post->ID, 'role', $_POST['role']);
+  update_post_meta($post->ID, 'background_color', $_POST['background_color']);
+}
+
+add_action('save_post', 'jh_save_details');
 
 // register tag taxonomies
-
-//create two taxonomies, genres and techonologies for the post type "tag"
-function create_tag_taxonomies()
-{
+function jh_create_tag_taxonomies(){
   // Add new taxonomy, NOT hierarchical (like techonologies)
   $labels = array(
     'name' => _x( 'Technologies Used', 'taxonomy general name' ),
@@ -113,4 +117,4 @@ function create_tag_taxonomies()
   ));
 }
 
-add_action( 'init', 'create_tag_taxonomies', 0 );
+add_action( 'init', 'jh_create_tag_taxonomies', 0 );
