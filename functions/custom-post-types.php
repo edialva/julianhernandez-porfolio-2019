@@ -35,6 +35,7 @@ function jh_portfolio_register(){
   );
 
   register_post_type('portfolio', $args);
+  flush_rewrite_rules();
 
 }
 

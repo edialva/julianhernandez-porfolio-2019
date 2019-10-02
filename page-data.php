@@ -14,7 +14,7 @@ $data = array(
   ],
 
   'wp_title' => wp_title('', false),
-  'wp_footer' => output_buffer_contents(wp_footer),
+  'wp_footer' => jh_output_buffer_contents(wp_footer),
 
   'template_directory_uri' => get_template_directory_uri(),
   'stylesheet_url' => get_bloginfo('stylesheet_url'),
