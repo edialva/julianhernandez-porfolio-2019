@@ -35,5 +35,5 @@ function jh_get_post_meta($postId){
  */
 function jh_post_meta(){
   global $post;
-  return jh_get_post_meta($post);
+  return jh_get_post_meta($post->ID);
 }

@@ -87,8 +87,8 @@ function jh_save_details(){
 
 add_action('save_post', 'jh_save_details');
 
-// register tag taxonomies
-function jh_create_tag_taxonomies(){
+// register technology taxonomies
+function jh_technologies(){
   // Add new taxonomy, NOT hierarchical (like techonologies)
   $labels = array(
     'name' => _x( 'Technologies Used', 'taxonomy general name' ),
@@ -108,7 +108,7 @@ function jh_create_tag_taxonomies(){
     'menu_name' => __( 'Technologies' ),
   );
 
-  register_taxonomy('tag','portfolio',array(
+  register_taxonomy('technologies','portfolio',array(
     'hierarchical' => false,
     'labels' => $labels,
     'show_ui' => true,
@@ -118,4 +118,4 @@ function jh_create_tag_taxonomies(){
   ));
 }
 
-add_action( 'init', 'jh_create_tag_taxonomies', 0 );
+add_action( 'init', 'jh_technologies', 0 );

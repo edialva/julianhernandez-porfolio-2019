@@ -2,26 +2,24 @@
  * Heading
  *
 
-#header
+nav.main-menu
   height: 80px
   border-top: 6px solid $primary_blue
   background: $primary_gray
   border-bottom: solid 3px $white
   box-sizing: content-box
 
-  .navigation
+  ul
+    margin-left: 8em
+    font-size: 1.2em
 
-    ul
-      margin-left: 8em
-      font-size: 1.2em
+    li
+      display: inline-block
+      margin-right: 6em
+      line-height: 80px
 
-      li
-        display: inline-block
-        margin-right: 6em
-        line-height: 80px
+      &:last-of-type
+        margin-right: 0
 
-        &:last-of-type
-          margin-right: 0
-
-        a
-          color: $white
+      a
+        color: $white

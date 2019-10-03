@@ -58,7 +58,7 @@ gulp.task('minify-css', function () {
  * Handle all stylesheet build processes (compile sass, and autoprefix)
  */
 gulp.task('build-css-development', function(){
-  return gulp.src(CONFIG.css.sassGlob)
+  return gulp.src('./assets/css/src/main.css')
   .pipe(sass().on('error', sass.logError))
   .pipe(autoprefixer())
   .pipe(gulp.dest(CONFIG.css.outputDir))

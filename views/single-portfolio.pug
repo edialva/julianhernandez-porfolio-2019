@@ -2,6 +2,37 @@ block content
   
   header
     
-    .logo
-      img(src='http://julian.local/wp-content/uploads/2019/10/princessparties.png')
+    .heading(style="background:#" + custom.background_color)
+      
+      .logo
+        img(src=get_the_post_thumbnail_url(null, 'full'))
+      
+    include inc/header.pug
+  
+  article
+    
+    .container
+      
+      header 
+      
+        h1
+          - the_title()
+      
+      .meta
+        
+        p #[span Year:] #{$custom['year_completed']}
+        
+        p #[span Role:] #{$custom['role']}
+              
+        p
+          
+          span Technologies Used:
+        
+        ul.tech
+          each technology in technologies            
+            li= technology
+      
+      .the-content
+        - the_content()
+        
     
