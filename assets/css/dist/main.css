@@ -599,14 +599,17 @@ body.single-portfolio article {
         body.single-portfolio article .container .meta p span {
           font-weight: 700; }
       body.single-portfolio article .container .meta ul.tech {
-        margin-top: 10px; }
+        max-width: 60%;
+        margin: 0 auto;
+        display: block;
+        margin-top: 15px; }
         body.single-portfolio article .container .meta ul.tech li {
           display: inline-block;
           font-weight: 300;
           padding: 8px 15px;
           border-radius: 5px;
           background: #D8D8D8;
-          margin: 0 10px; }
+          margin: 0 10px 10px 0; }
     body.single-portfolio article .container .the-content {
       margin-top: 30px; }
       body.single-portfolio article .container .the-content p {
