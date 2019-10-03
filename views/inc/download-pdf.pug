@@ -1,7 +1,12 @@
 .download.pdf
-  a(href= url)
-  span.download= filename
+  if download !== 0
+
+    a(href= href download=download)
+
+  else
+
+    a(href= href)
+
+  span.download= name
   .icon
-    img(src=template_directory_uri + '/assets/images/pdf_cropped.png')
-  
-    
+    img(src=get_template_directory_uri() + '/assets/images/pdf_cropped.png')

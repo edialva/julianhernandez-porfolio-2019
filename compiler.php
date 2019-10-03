@@ -1,6 +1,6 @@
 <?php
 
-require_once('vendor/autoload.php');
+require_once(JH_VENDOR . '/autoload.php');
 
 use Pug\Pug;
 
@@ -11,4 +11,4 @@ $options = [
   // 'expressionLanguage' => 'php',
 ];
 
-$pug = new Pug($options);
+return $pug = new Pug($options);
