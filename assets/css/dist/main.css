@@ -543,3 +543,23 @@ section#contact {
       margin: 10px 0; }
   section#contact form#contact-form {
     width: 100%; }
+
+/**
+ * Portfolio Post
+ * */
+body.single-portfolio header {
+  height: 30vh;
+  background: #eee;
+  padding: 1.5em 0;
+  min-height: 125px; }
+  body.single-portfolio header .logo {
+    margin: 0 auto;
+    height: 100%;
+    max-width: 300px;
+    text-align: center;
+    display: table; }
+    body.single-portfolio header .logo img {
+      width: 100%;
+      height: auto;
+      display: table-cell;
+      vertical-align: middle; }
