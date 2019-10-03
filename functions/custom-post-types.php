@@ -70,10 +70,20 @@ function jh_background_color(){
   <?php
 }
 
+function jh_environment(){
+  global $post;
+  $custom = get_post_custom($post->ID);
+  $env = $custom['environment'][0];
+  ?>
+  <input name='environment' value='<?php echo $env; ?>'/>
+  <?php
+}
+
 function jh_add_meta_boxes(){
   add_meta_box('year_completed_meta', 'Year Completed', 'jh_year_completed', 'portfolio', 'side', 'low');
   add_meta_box('role_meta', 'Role', 'jh_role', 'portfolio', 'normal', 'low');
   add_meta_box('background_color_meta', 'Background Color', 'jh_background_color', 'portfolio', 'side', 'low');
+  add_meta_box('environment', 'Environment', 'jh_environment', 'portfolio', 'side', 'low');
 }
 
 add_action('admin_init', 'jh_add_meta_boxes');
@@ -83,6 +93,7 @@ function jh_save_details(){
   update_post_meta($post->ID, 'year_completed_', $_POST['year_completed']);
   update_post_meta($post->ID, 'role', $_POST['role']);
   update_post_meta($post->ID, 'background_color', $_POST['background_color']);
+  update_post_meta($post->ID, 'environment', $_POST['environment']);
 }
 
 add_action('save_post', 'jh_save_details');
