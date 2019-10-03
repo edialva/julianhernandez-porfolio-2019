@@ -2,6 +2,8 @@
  * Download Button
  *
 
+$containerHeight: 54px
+
 .download
   border-top-left-radius: 10px
   border-bottom-left-radius: 10px
@@ -11,9 +13,10 @@
   margin: 20px 0
   display: flex
   align-items: center
+  height: $containerHeight
 
   & > a
-    height: 54px
+    height: 100%
     width: 100%
     z-index: 1
     position: absolute
@@ -28,12 +31,12 @@
     background: #EEEEEE
     font-size: 0.8em
     flex-grow: 1
-    height: 54px
-    line-height: 54px
+    height: 100%
+    line-height: $containerHeight
 
   .icon
     display: block
-    height: 54px
+    height: 100%
     width: 54px
     background-repeat: no-repeat
     background-position: center
@@ -43,5 +46,5 @@
     overflow: hidden
 
     img
-      height: 54px
+      height: 100%
       width: 100%

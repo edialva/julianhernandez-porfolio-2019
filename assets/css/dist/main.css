@@ -384,9 +384,10 @@ section#footer {
   max-width: 355px;
   margin: 20px 0;
   display: flex;
-  align-items: center; }
+  align-items: center;
+  height: 54px; }
   .download > a {
-    height: 54px;
+    height: 100%;
     width: 100%;
     z-index: 1;
     position: absolute;
@@ -400,11 +401,11 @@ section#footer {
     background: #EEEEEE;
     font-size: 0.8em;
     flex-grow: 1;
-    height: 54px;
+    height: 100%;
     line-height: 54px; }
   .download .icon {
     display: block;
-    height: 54px;
+    height: 100%;
     width: 54px;
     background-repeat: no-repeat;
     background-position: center;
@@ -413,7 +414,7 @@ section#footer {
     border-bottom-right-radius: 10px;
     overflow: hidden; }
     .download .icon img {
-      height: 54px;
+      height: 100%;
       width: 100%; }
 
 /**
