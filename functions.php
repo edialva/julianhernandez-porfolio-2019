@@ -42,3 +42,10 @@ add_theme_support('post-thumbnails');
  */
 require(JH_FUNCTIONS . '/custom-post-types.php');
 require(JH_FUNCTIONS . '/shortcodes.php');
+
+/**
+ * Register Menu
+ */
+register_nav_menus(
+    array('primary-menu' => __('Primary Menu'))
+);
