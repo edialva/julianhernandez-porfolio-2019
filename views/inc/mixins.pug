@@ -14,3 +14,26 @@ mixin text_input(labelText)
       .border
       label= labelText || attributes.name
     .input-error-messages
+
+mixin social_media_row(links, shade)
+  - var darkDir = template_directory_uri + '/assets/images/social-media/dark'
+  - var lightDir = template_directory_uri + '/assets/images/social-media/light'
+  - var iconDir = shade === 'light' ? lightDir : darkDir
+  .social-media-row
+    ul
+      if links.github_url
+        li
+          a(href=links.github_url)
+            img(src=iconDir + '/github.png' alt="Julian Hernandez Github Profile" title="julian1729 Github")
+      if links.linkedin_url
+        li
+          a(href=links.linkedin_url)
+            img(src=iconDir + '/linkedin.png' alt="Julian Hernandez LinkedIn Profile" title="Julian Hernandez on LinkedIn")
+      if links.instagram_url
+        li
+          a(href=links.instagram_url)
+            img(src=iconDir + '/instagram.png' alt="Julian Hernandez Instragram Profile" title="Julian's Instagram")
+      if links.twitter_url
+        li
+          a(href=links.twitter_url)
+            img(src=iconDir + '/twitter.png' alt="Julian Hernandez Twitter Profile" title="jherwebsites Twitter")

@@ -34,6 +34,8 @@ $data['contact_form'] = do_shortcode('[forminator_form id="25"]');
 // get skills
 $data['skills'] = get_field('skills', 'option');
 
+$data['social_media_links'] = get_field('social_media', 'option');
+
 get_header();
 
 echo $pug->renderFile('front-page', $data, $options);

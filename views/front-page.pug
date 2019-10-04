@@ -23,20 +23,7 @@ block content
       
       .col-2.vertical
         img.profile-picture(src=template_directory_uri + '/assets/images/julianhernandez_compressed_415x450.jpg')
-        .social-media-row
-          ul
-            li
-              a
-                img(src=template_directory_uri + '/assets/images/social-media/dark/github.svg' alt="Julian Hernandez Github Profile" title="julian1729 Github")
-            li
-              a
-                img(src=template_directory_uri + '/assets/images/social-media/dark/instagram.svg' alt="Julian Hernandez Instragram Profile" title="Julian's Instagram")
-            li
-              a
-                img(src=template_directory_uri + '/assets/images/social-media/dark/twitter.svg' alt="Julian Hernandez Twitter Profile" title="jherwebsites Twitter")
-            li
-              a
-                img(src=template_directory_uri + '/assets/images/social-media/dark/linkedin.svg' alt="Julian Hernandez LinkedIn Profile" title="Julian Hernandez on LinkedIn")
+        +social_media_row(social_media_links)
       
       .col-2
         .about-text
@@ -107,6 +94,7 @@ block content
         
       .col-2.block !{contact_form}
         
+        //- replaced w/ forminator form
         //- form#contact-form
         //-   +text_input('Name')(name="contact_name")
         //-   +text_input('Email')(name="contact_email")
@@ -121,20 +109,7 @@ block content
         
     footer
       p.copyright Copyright © 2019 Julian Hernandez. All rights reserved.
-      .social-media-row
-        ul
-          li
-            a
-              img(src=template_directory_uri + '/assets/images/social-media/light/github.png' alt="Julian Hernandez Github Profile" title="julian1729 Github")
-          li
-            a
-              img(src=template_directory_uri + '/assets/images/social-media/light/instagram.png' alt="Julian Hernandez Instragram Profile" title="Julian's Instagram")
-          li
-            a
-              img(src=template_directory_uri + '/assets/images/social-media/light/twitter.png' alt="Julian Hernandez Twitter Profile" title="jherwebsites Twitter")
-          li
-            a
-              img(src=template_directory_uri + '/assets/images/social-media/light/linkedin.png' alt="Julian Hernandez LinkedIn Profile" title="Julian Hernandez on LinkedIn")
+      +social_media_row(social_media_links, 'light')
       
     
     
