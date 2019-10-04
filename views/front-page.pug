@@ -108,14 +108,14 @@ block content
           .downloads
             +pdfDownload('Julian_Hernandez_FullStackWebDeveloper.pdf', '#')
         
-      .col-2.block
+      .col-2.block !{contact_form}
         
-        form#contact-form
-          +text_input('Name')(name="contact_name")
-          +text_input('Email')(name="contact_email")
-          textarea(name="contact_message" placeholder="Message")
-          button.submit(type="button")
-            img(src=template_directory_uri + '/assets/images/send_white_square.png' width="26px" height="23px")
+        //- form#contact-form
+        //-   +text_input('Name')(name="contact_name")
+        //-   +text_input('Email')(name="contact_email")
+        //-   textarea(name="contact_message" placeholder="Message")
+        //-   button.submit(type="button")
+        //-     img(src=template_directory_uri + '/assets/images/send_white_square.png' width="26px" height="23px")
     
   section#footer
     

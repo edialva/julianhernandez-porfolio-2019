@@ -28,6 +28,9 @@ foreach ($projects as $project) {
   $data['projects'][$project->post_title] = $p;
 }
 
+$data['contact_form'] = do_shortcode('[forminator_form id="25"]');
+// echo $data['ninja_form'];
+
 get_header();
 
 echo $pug->renderFile('front-page', $data, $options);
