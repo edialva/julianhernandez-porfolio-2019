@@ -442,9 +442,6 @@ a {
  * All Page Styles
  * */
 /**
- * Front Page Styles
- */
-/**
  * Above the fold
  * */
 #above-the-fold {
@@ -465,6 +462,9 @@ a {
     #above-the-fold .center .cta {
       margin-top: 10px; }
 
+/**
+ * About Me
+ * */
 #about {
   background: #21A0A0; }
   #about .profile-picture {
@@ -474,10 +474,13 @@ a {
   #about .about-text p {
     color: #FFF; }
 
+/**
+ * Portfolio
+ * */
 .portfolio-container {
   max-width: 100%; }
   .portfolio-container .portfolio-item {
-    background: tomato;
+    background-color: #51BBFE;
     flex: 1 0 0;
     height: auto;
     display: inline-flex;
@@ -489,8 +492,11 @@ a {
       content: '';
       float: left;
       padding-top: 100%; }
-    .portfolio-container .portfolio-item > a {
+    .portfolio-container .portfolio-item a {
       display: block;
+      position: absolute;
+      top: 0;
+      left: 0;
       height: 100%;
       width: 100%;
       z-index: 1; }
@@ -511,6 +517,13 @@ a {
         width: 100%;
         max-width: 100%;
         height: auto; }
+    .portfolio-container .portfolio-item .title {
+      padding: 0 10%;
+      text-align: center; }
+      .portfolio-container .portfolio-item .title * {
+        line-height: 1.5em;
+        color: #FFF;
+        font-size: 2em; }
     .portfolio-container .portfolio-item span.type-badge {
       border-radius: 6px;
       padding: 10px 25px;
@@ -523,16 +536,8 @@ a {
       color: #FFF;
       font-size: 0.8em; }
 
-@media screen and (max-width: 725px) {
-  .portfolio-item {
-    width: 50% !important; } }
-
-@media screen and (max-width: 550px) {
-  .portfolio-item {
-    width: 100% !important; } }
-
 /**
- * Contact section
+ * Contact
  * */
 section#contact {
   background: #454545;
@@ -546,6 +551,14 @@ section#contact {
       margin: 10px 0; }
   section#contact form#contact-form {
     width: 100%; }
+
+@media screen and (max-width: 725px) {
+  .portfolio-item {
+    width: 50% !important; } }
+
+@media screen and (max-width: 550px) {
+  .portfolio-item {
+    width: 100% !important; } }
 
 /**
  * Portfolio Post

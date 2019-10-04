@@ -15,7 +15,7 @@ const CONFIG = {
     pages: ['landing.js'],
   },
   css: {
-    sassGlob: './assets/css/src/[^_]*',
+    sassGlob: './assets/css/src/**/*',
     outputDir: './assets/css/dist/',
   },
   html: {
@@ -58,7 +58,7 @@ gulp.task('minify-css', function () {
  * Handle all stylesheet build processes (compile sass, and autoprefix)
  */
 gulp.task('build-css-development', function(){
-  return gulp.src('./assets/css/src/main.css')
+  return gulp.src('./assets/css/src/main.sass')
   .pipe(sass().on('error', sass.logError))
   .pipe(autoprefixer())
   .pipe(gulp.dest(CONFIG.css.outputDir))

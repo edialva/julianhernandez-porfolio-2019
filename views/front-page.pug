@@ -64,23 +64,32 @@ block content
               
       .portfolio-container
         
-        .portfolio-item
-          a(href="#")
-          .logo
-            img(src="http://julian.local/wp-content/uploads/2019/09/logo_white.png")
-          span.type-badge Node.js
-      
-        .portfolio-item(style="background: #F1B3B2")
-          a
-          .logo
-            img(src="http://julian.local/wp-content/uploads/2019/09/princessparties.png")
-          span.type-badge Wordpress
-      
-        .portfolio-item(style="background: #F1B3B2")
-          a
-          .logo
-            img(src="http://julian.local/wp-content/uploads/2019/09/princessparties.png")
-          span.type-badge Node.js
+        each project in projects
+          .portfolio-item(style="background: #" + project.background_color)
+            a(href=project.permalink)
+            if project.logo_url
+              
+              .logo
+                img(src=project.logo_url)
+            
+            else 
+              
+              .title
+                h3= project.name
+              
+            span.type-badge= project.environment
+        
+        //- .portfolio-item(style="background: #F1B3B2")
+        //-   a
+        //-   .title
+        //-     h3 Princess Parties by Brittany
+        //-   span.type-badge Wordpress
+        //- 
+        //- .portfolio-item(style="background: #F1B3B2")
+        //-   a
+        //-   .logo
+        //-     img(src="http://julian.local/wp-content/uploads/2019/09/princessparties.png")
+        //-   span.type-badge Node.js
           
   section#contact
     
