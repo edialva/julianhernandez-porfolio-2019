@@ -47,11 +47,8 @@ block content
       
       .col-4.block
         
-        +skill('HTML', 75)
-        
-        +skill('CSS', 85)
-        
-        +skill('Javascript', 75)
+        each skill in skills
+          +skill(skill.name, skill.level)
   
   //- Portfolio work
   section#portfolio

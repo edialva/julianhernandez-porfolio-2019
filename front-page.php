@@ -28,8 +28,11 @@ foreach ($projects as $project) {
   $data['projects'][$project->post_title] = $p;
 }
 
+// get contact form
 $data['contact_form'] = do_shortcode('[forminator_form id="25"]');
-// echo $data['ninja_form'];
+
+// get skills
+$data['skills'] = get_field('skills', 'option');
 
 get_header();
 
