@@ -7,6 +7,7 @@
     <meta name="keywords" content="julian hernandez, full stack developer, wordpress, node.js">
     <meta charset="UTF-8">
     <meta name="og:title" content="Julian Hernandez | Full-Stack Developer">
+    <base href="<?php echo site_url(); ?>/">
     <?php wp_head(); ?>
   </head>
 
