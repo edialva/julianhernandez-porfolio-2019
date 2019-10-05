@@ -4,6 +4,7 @@ if(typeof $ !== 'function') return console.error('jQuery not loaded');
 DOM_CACHE = {
   $mobile_menu_btn: $('#mobile-menu-btn'),
   $mobile_menu_container: $('#mobile-menu-container'),
+  $scroll_button: $('#scroll-button'),
 };
 
 // OPTIMIZE: this is sloppy, create into module
@@ -25,3 +26,12 @@ let menuHandler = (e) => {
 
 DOM_CACHE.$mobile_menu_btn.on('click', menuHandler);
 DOM_CACHE.$mobile_menu_container.on('click', 'a', menuHandler);
+
+/**
+ * Scroll Button
+ */
+DOM_CACHE.$scroll_button.on('click', (e) => {
+
+  $("html, body").animate({ scrollTop: 0 }, "slow");
+
+});
