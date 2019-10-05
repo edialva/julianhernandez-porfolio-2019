@@ -19,7 +19,7 @@ block content
   //- About Julian
   section#about
           
-    .row
+    .row.to-animate
       
       .col-2.vertical
         img.profile-picture(src=template_directory_uri + '/assets/images/julianhernandez_compressed_415x450.jpg')
@@ -32,7 +32,7 @@ block content
     
     .row
       
-      .col-4.block
+      .col-4.block.skills
         
         each skill in skills
           +skill(skill.name, skill.level)

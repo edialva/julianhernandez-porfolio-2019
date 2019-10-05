@@ -429,7 +429,8 @@ section {
     position: relative; }
     .skill .bar-container .bar {
       background: #969696;
-      height: 100%; }
+      height: 100%;
+      width: 0px; }
 
 @media screen and (max-width: 550px) {
   .bar-container, .bar-container .bar {
@@ -585,12 +586,18 @@ a {
  * */
 #about {
   background: #21A0A0; }
+  #about .row.to-animate {
+    transform: translateX(-100px);
+    transition: transform 800ms;
+    opacity: 0; }
   #about .profile-picture {
     height: 450px;
     width: auto;
     margin-bottom: 20px; }
   #about .about-text p {
     color: #FFF; }
+  #about .skills {
+    opacity: 0; }
 
 /**
  * Portfolio

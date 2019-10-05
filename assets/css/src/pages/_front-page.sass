@@ -35,6 +35,11 @@
 #about
   background: $secondary_blue
 
+  .row.to-animate
+    transform: translateX(-100px)
+    transition: transform 800ms
+    opacity: 0
+
   .profile-picture
     height: 450px
     width: auto
@@ -44,6 +49,9 @@
 
     p
       color: $white
+
+  .skills
+    opacity: 0
 
 /**
  * Portfolio
