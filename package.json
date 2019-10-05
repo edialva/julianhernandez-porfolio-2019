@@ -20,6 +20,7 @@
   },
   "dependencies": {
     "jquery": "^3.4.1",
-    "lodash": "^4.17.15"
+    "lodash": "^4.17.15",
+    "velocity-animate": "^1.5.2"
   }
 }

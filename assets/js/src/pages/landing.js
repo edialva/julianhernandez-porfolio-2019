@@ -1,5 +1,7 @@
 const $ = window.jQuery;
 if(typeof $ !== 'function') return console.error('jQuery not loaded');
+// require animations
+require('../modules/landing.animations.js');
 
 DOM_CACHE = {
   $mobile_menu_btn: $('#mobile-menu-btn'),
