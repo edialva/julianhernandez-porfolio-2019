@@ -6,7 +6,10 @@ require('velocity-animate');
 const DOM_CACHE = {
   $landing_text: $('section#above-the-fold .center'),
   $about_info: $('section#about .row.to-animate'),
-  $skills: $('.skill')
+  $skill_container: $('.row .skills'),
+  $skills: $('.skill'),
+  $contact_info: $('section#contact .text'),
+  $contact_form: $('section#contact .jh-contact-form'),
 };
 
 const MOBILE_BREAKPOINTS = {
@@ -38,17 +41,12 @@ DOM_CACHE.$landing_text
 /**
  * About Section
  */
-inView('img.profile-picture')
+inView('section#about')
   .on('enter', el => {
+    // animate info
     DOM_CACHE.$about_info.velocity({translateX: 0, opacity: 1 });
-  })
-  .on('exit', el => {
-    DOM_CACHE.$about_info.velocity('stop').velocity('reverse');
-  });
-
-inView('.row .skills')
-  .on('enter', el => {
-    $(el).velocity({opacity: 1}, {delay: 500});
+    // animate skills
+    DOM_CACHE.$skill_container.velocity({opacity: 1}, {delay: 500});
     let delay = 1000;
     let duration = 500;
     DOM_CACHE.$skills.each(function() {
@@ -73,7 +71,24 @@ inView('.row .skills')
       }, delay);
       delay = delay + 150;
     });
-  })
+  });
+
+/**
+ * Portfolio Section
+ */
+inView('section#portfolio')
+  .on('enter', el => {
+    $(el).velocity('fadeIn', {delay: 1000, duration: 1000});
+  });
+
+/**
+ * Contact Section
+ */
+inView('section#contact')
+  .on('enter', el => {
+    DOM_CACHE.$contact_info.velocity('fadeIn', {delay: 900});
+    DOM_CACHE.$contact_form.velocity('fadeIn', {delay: 1100});
+  });
 
 },{"in-view":3,"velocity-animate":4}],2:[function(require,module,exports){
 const $ = window.jQuery;

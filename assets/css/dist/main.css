@@ -602,6 +602,9 @@ a {
 /**
  * Portfolio
  * */
+section#portfolio {
+  opacity: 0; }
+
 .portfolio-container {
   max-width: 100%;
   overflow: hidden; }
@@ -668,15 +671,19 @@ a {
 section#contact {
   background: #454545;
   padding-bottom: 6em; }
-  section#contact .text p {
-    color: #51BBFE; }
-  section#contact .text .contact-details {
-    margin: 20px 0; }
-    section#contact .text .contact-details a {
-      display: table;
-      margin: 10px 0; }
-  section#contact form#contact-form {
-    width: 100%; }
+  section#contact .text {
+    opacity: 0; }
+    section#contact .text p {
+      color: #51BBFE; }
+    section#contact .text .contact-details {
+      margin: 20px 0; }
+      section#contact .text .contact-details a {
+        display: table;
+        margin: 10px 0; }
+  section#contact .jh-contact-form {
+    opacity: 0; }
+    section#contact .jh-contact-form form#contact-form {
+      width: 100%; }
 
 @media screen and (max-width: 725px) {
   #about .profile-picture {

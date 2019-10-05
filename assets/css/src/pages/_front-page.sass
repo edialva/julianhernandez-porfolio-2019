@@ -56,6 +56,9 @@
 /**
  * Portfolio
  *
+section#portfolio
+  opacity: 0
+
 .portfolio-container
   max-width: 100%
   overflow: hidden
@@ -132,6 +135,7 @@ section#contact
   padding-bottom: 6em
 
   .text
+    opacity: 0
     p
       color: $primary_blue
 
@@ -142,8 +146,10 @@ section#contact
         display: table
         margin: 10px 0
 
-  form#contact-form
-    width: 100%
+  .jh-contact-form
+    opacity: 0
+    form#contact-form
+      width: 100%
 
 // thinner than 550px
 @media screen and (max-width: $mobile1)
