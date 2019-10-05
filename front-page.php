@@ -34,7 +34,11 @@ $data['contact_form'] = do_shortcode('[forminator_form id="25"]');
 // get skills
 $data['skills'] = get_field('skills', 'option');
 
+// get social media links
 $data['social_media_links'] = get_field('social_media', 'option');
+
+// get social media link
+$data['resume_url'] = get_field('resume', 'option');
 
 get_header();
 
