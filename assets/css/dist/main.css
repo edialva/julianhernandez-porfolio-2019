@@ -287,27 +287,74 @@ section {
 /**
  * Heading
  * */
-nav.main-menu {
+.main-menu {
   height: 80px;
   border-top: 6px solid #51BBFE;
   background: #454545;
   border-bottom: solid 3px #FFF;
-  box-sizing: content-box; }
-  nav.main-menu ul {
+  box-sizing: content-box;
+  position: relative; }
+  .main-menu nav#full-menu-container ul {
     margin-left: 8em;
     font-size: 1.2em; }
-    nav.main-menu ul li {
+    .main-menu nav#full-menu-container ul li {
       display: inline-block;
       margin-right: 6em;
       line-height: 80px; }
-      nav.main-menu ul li:last-of-type {
+      .main-menu nav#full-menu-container ul li:last-of-type {
         margin-right: 0; }
-      nav.main-menu ul li a {
+      .main-menu nav#full-menu-container ul li a {
         color: #FFF; }
+  .main-menu .mobile-header-container {
+    display: none;
+    align-items: center;
+    justify-content: space-between;
+    height: 100%; }
+    .main-menu .mobile-header-container h2.name {
+      color: #FFF;
+      font-size: 1.3em;
+      text-transform: lowercase;
+      font-weight: 300;
+      margin: 0 0 0 15px; }
+    .main-menu .mobile-header-container #mobile-menu-btn {
+      width: 30px;
+      margin-right: 20px;
+      cursor: pointer; }
+      .main-menu .mobile-header-container #mobile-menu-btn div {
+        height: 3px;
+        background: #21A0A0;
+        margin-bottom: 6px; }
+  .main-menu nav#mobile-menu-container {
+    position: absolute;
+    top: 77px;
+    left: 0;
+    width: 100%;
+    background: #454545;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 300ms; }
+    .main-menu nav#mobile-menu-container ul {
+      text-align: center; }
+      .main-menu nav#mobile-menu-container ul li:hover {
+        background: #21A0A0; }
+      .main-menu nav#mobile-menu-container ul li a {
+        padding: 1em 0;
+        color: #FFF;
+        height: 100%;
+        display: block;
+        font-weight: 300;
+        font-size: 1.2em; }
 
 @media screen and (max-width: 725px) {
-  nav.main-menu ul {
-    display: none; } }
+  .main-menu nav#full-menu-container ul {
+    display: none; }
+  .main-menu .mobile-header-container {
+    display: flex; } }
+
+@media screen and (max-width: 1000px) {
+  nav#full-menu-container ul {
+    text-align: center;
+    margin-left: 0 !important; } }
 
 /**
  * Social Media button row

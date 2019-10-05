@@ -1,3 +1,17 @@
-nav.main-menu
+.main-menu
   
-  - wp_nav_menu(array('name' => 'primary-menu', 'container' => false));
+  nav#full-menu-container
+    - wp_nav_menu(array('name' => 'primary-menu', 'container' => false));
+  
+  .mobile-header-container
+    
+    h2.name Julian Hernandez
+    
+    #mobile-menu-btn
+      div
+      div
+      div
+
+  //- mobile menu with #menu_id
+  nav#mobile-menu-container
+    - wp_nav_menu(array('name' => 'primary-menu', 'container' => false, 'menu_id' => 'mobile-menu'));

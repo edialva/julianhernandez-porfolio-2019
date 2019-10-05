@@ -1,30 +1,93 @@
 /**
  * Heading
  *
+$headerHeight: 80px
+$borderBottom: 3px
 
-nav.main-menu
-  height: 80px
+.main-menu
+  height: $headerHeight
   border-top: 6px solid $primary_blue
   background: $primary_gray
-  border-bottom: solid 3px $white
+  border-bottom: solid $borderBottom $white
   box-sizing: content-box
+  position: relative
 
-  ul
-    margin-left: 8em
-    font-size: 1.2em
+  nav#full-menu-container
+    ul
+      margin-left: 8em
+      font-size: 1.2em
 
-    li
-      display: inline-block
-      margin-right: 6em
-      line-height: 80px
+      li
+        display: inline-block
+        margin-right: 6em
+        line-height: 80px
 
-      &:last-of-type
-        margin-right: 0
+        &:last-of-type
+          margin-right: 0
 
-      a
-        color: $white
+        a
+          color: $white
+
+  .mobile-header-container
+    display: none
+    align-items: center
+    justify-content: space-between
+    height: 100%
+
+    h2.name
+      color: $white
+      font-size: 1.3em
+      text-transform: lowercase
+      font-weight: 300
+      margin: 0 0 0 15px
+
+    #mobile-menu-btn
+      width: 30px
+      margin-right: 20px
+      cursor: pointer
+      div
+        height: 3px
+        background: $secondary_blue
+        margin-bottom: 6px
+
+  nav#mobile-menu-container
+    position: absolute
+    top: $headerHeight - $borderBottom
+    left: 0
+    width: 100%
+    background: $primary_gray
+    max-height: 0
+    overflow: hidden
+    transition: max-height 300ms
+
+    ul
+      text-align: center
+      li
+        &:hover
+          background: $secondary_blue
+        a
+          padding: 1em 0
+          color: $white
+          height: 100%
+          display: block
+          font-weight: 300
+          font-size: 1.2em
 
 @media screen and (max-width: $mobile1)
-  nav.main-menu
+
+  .main-menu
+
+    nav#full-menu-container
+      ul
+        display: none
+
+    .mobile-header-container
+      display: flex
+
+@media screen and (max-width: 1000px)
+
+  nav#full-menu-container
+
     ul
-      display: none
+      text-align: center
+      margin-left: 0 !important
