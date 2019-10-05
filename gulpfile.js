@@ -72,7 +72,7 @@ gulp.task('serve', ['bundle-js', 'build-css-development'], function() {
         proxy: "julian.local",
     });
 
-    gulp.watch('./assets/js/src/pages/**', ['bundle-js']);
+    gulp.watch('./assets/js/src/**/*.js', ['bundle-js']);
 
     gulp.watch('./assets/css/src/**/*', ['build-css-development']);
 
