@@ -2,6 +2,10 @@
  * Skill
  *
 
+%bar-radius
+  border-top-right-radius: 5px
+  border-bottom-right-radius: 5px
+
 .skill
   display: flex
   font-weight: 300
@@ -33,5 +37,25 @@
 
   .percentage
     @extend %skill-end
-    border-top-right-radius: 5px
-    border-bottom-right-radius: 5px
+    @extend %bar-radius
+
+@media screen and (max-width: $mobile2)
+  %bar-radius2
+    border-top-right-radius: 20px
+    border-bottom-right-radius: 20px
+
+  .skill
+    margin-bottom: 25px
+    font-size: 0.9em
+
+  %skill-end
+    padding: 8px
+
+  .bar-container
+    @extend %bar-radius2
+
+    .bar
+      @extend %bar-radius2
+
+  .percentage
+    display: none

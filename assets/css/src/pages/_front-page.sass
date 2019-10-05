@@ -132,13 +132,30 @@ section#contact
     width: 100%
 
 // thinner than 550px
-@media screen and (max-width: 725px)
+@media screen and (max-width: $mobile1)
+
+  #about
+    .profile-picture
+      width: 100%
+      height: auto
+      margin-bottom: 20px
 
   .portfolio-item
     width: 50% !important
 
+  #above-the-fold
+    .center
+      h1
+        // line-height: 1.5em !important
+        span
+          display: block
+        br
+          display: none
+    .cta
+      margin-top: 40px !important
+
 // thinner than 725px
-@media screen and (max-width: 550px)
+@media screen and (max-width: $mobile2)
 
   .portfolio-item
     width: 100% !important

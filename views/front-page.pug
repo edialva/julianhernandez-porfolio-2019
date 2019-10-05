@@ -5,11 +5,11 @@ include inc/mixins.pug
 block content
   
   //- Landing page - full height of screen on load
-  section#above-the-fold.no-padding
+  section#above-the-fold
     
     .center
       
-      h1 Hey there! I'm #[span Julian Hernandez]. #[br] Nice to meet you!
+      h1 Hey there! I'm #[span Julian Hernandez.] #[br] Nice to meet you!
       a.cta.light(href="#about") Get to know me!
   
   //- Header with navigation
@@ -102,7 +102,7 @@ block content
         //-   button.submit(type="button")
         //-     img(src=template_directory_uri + '/assets/images/send_white_square.png' width="26px" height="23px")
     
-  section#footer
+  section#footer.no-padding
     
     #scroll-button
       img(src=template_directory_uri + '/assets/images/up.svg')

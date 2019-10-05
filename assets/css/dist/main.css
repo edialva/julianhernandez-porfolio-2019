@@ -273,6 +273,17 @@ section {
 .no-padding {
   padding: 0 !important; }
 
+@media screen and (max-width: 725px) {
+  html, body {
+    font-size: 14px; }
+  section:not(.no-padding) {
+    padding: 6em 1.5em !important; }
+  .row {
+    flex-direction: column; }
+  [class^="col-"] {
+    width: 100% !important;
+    padding: 1em !important; } }
+
 /**
  * Heading
  * */
@@ -294,11 +305,16 @@ nav.main-menu {
       nav.main-menu ul li a {
         color: #FFF; }
 
+@media screen and (max-width: 725px) {
+  nav.main-menu ul {
+    display: none; } }
+
 /**
  * Social Media button row
  * */
 .social-media-row ul {
-  display: flex; }
+  display: flex;
+  justify-content: center; }
   .social-media-row ul li {
     margin-right: 20px; }
     .social-media-row ul li:last-of-type {
@@ -310,6 +326,10 @@ nav.main-menu {
 /**
  * Skill
  * */
+.skill .percentage {
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px; }
+
 .skill {
   display: flex;
   font-weight: 300;
@@ -333,9 +353,18 @@ nav.main-menu {
     .skill .bar-container .bar {
       background: #969696;
       height: 100%; }
-  .skill .percentage {
-    border-top-right-radius: 5px;
-    border-bottom-right-radius: 5px; }
+
+@media screen and (max-width: 550px) {
+  .bar-container, .bar-container .bar {
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px; }
+  .skill {
+    margin-bottom: 25px;
+    font-size: 0.9em; }
+  .skill .name, .skill .percentage {
+    padding: 8px; }
+  .percentage {
+    display: none; } }
 
 /**
  * Site footer
@@ -372,6 +401,15 @@ section#footer {
       margin: 0 auto;
       position: relative;
       top: 15px; }
+
+@media screen and (max-width: 725px) {
+  section#footer {
+    text-align: center;
+    padding: 2em 0 6em 0 !important; }
+    section#footer footer {
+      flex-direction: column; }
+      section#footer footer p.copyright {
+        margin-bottom: 25px; } }
 
 /**
  * Download Button
@@ -553,8 +591,18 @@ section#contact {
     width: 100%; }
 
 @media screen and (max-width: 725px) {
+  #about .profile-picture {
+    width: 100%;
+    height: auto;
+    margin-bottom: 20px; }
   .portfolio-item {
-    width: 50% !important; } }
+    width: 50% !important; }
+  #above-the-fold .center h1 span {
+    display: block; }
+  #above-the-fold .center h1 br {
+    display: none; }
+  #above-the-fold .cta {
+    margin-top: 40px !important; } }
 
 @media screen and (max-width: 550px) {
   .portfolio-item {
