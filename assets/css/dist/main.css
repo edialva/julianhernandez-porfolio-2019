@@ -412,7 +412,8 @@ section {
   font-weight: 300;
   color: #FFF;
   width: 100%;
-  margin-bottom: 30px; }
+  margin-bottom: 30px;
+  position: relative; }
   .skill:last-of-type {
     margin-bottom: 0; }
   .skill .name, .skill .percentage {
@@ -433,14 +434,29 @@ section {
       width: 0px; }
 
 @media screen and (max-width: 550px) {
-  .bar-container, .bar-container .bar {
-    border-top-right-radius: 20px;
-    border-bottom-right-radius: 20px; }
+  .skill .name, .bar-container, .bar-container .bar {
+    border-top-right-radius: 20px !important;
+    border-bottom-right-radius: 20px !important; }
+  .skill .name, .bar-container, .bar-container .bar {
+    border-bottom-left-radius: 20px !important;
+    border-top-left-radius: 20px !important; }
   .skill {
     margin-bottom: 25px;
-    font-size: 0.9em; }
+    font-size: 0.9em;
+    display: block; }
+    .skill .name {
+      z-index: 1;
+      position: relative; }
   .skill .name, .skill .percentage {
     padding: 8px; }
+  .bar-container {
+    width: calc(100% - 20px);
+    position: absolute !important;
+    height: 100%;
+    top: 0;
+    left: 20px; }
+    .bar-container .bar {
+      background: #454545 !important; }
   .percentage {
     display: none; } }
 

@@ -12,6 +12,7 @@
   color: $white
   width: 100%
   margin-bottom: 30px
+  position: relative
 
   &:last-of-type
     margin-bottom: 0
@@ -41,22 +42,40 @@
     @extend %bar-radius
 
 @media screen and (max-width: $mobile2)
-  %bar-radius2
-    border-top-right-radius: 20px
-    border-bottom-right-radius: 20px
+  %bar-radius-right
+    border-top-right-radius: 20px !important
+    border-bottom-right-radius: 20px !important
+  %bar-radius-left
+    border-bottom-left-radius: 20px !important
+    border-top-left-radius: 20px !important
 
   .skill
     margin-bottom: 25px
     font-size: 0.9em
+    display: block
+
+    .name
+      @extend %bar-radius-right
+      @extend %bar-radius-left
+      z-index: 1
+      position: relative
 
   %skill-end
     padding: 8px
 
   .bar-container
-    @extend %bar-radius2
+    @extend %bar-radius-right
+    @extend %bar-radius-left
+    width: calc(100% - 20px)
+    position: absolute !important
+    height: 100%
+    top: 0
+    left: 20px
 
     .bar
-      @extend %bar-radius2
+      @extend %bar-radius-right
+      @extend %bar-radius-left
+      background: $primary_gray !important
 
   .percentage
     display: none
