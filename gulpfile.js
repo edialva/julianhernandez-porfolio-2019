@@ -12,7 +12,7 @@ const CONFIG = {
   js: {
     inputDir: './assets/js/src/pages/',
     outputDir: './assets/js/dist',
-    pages: ['landing.js'],
+    pages: ['landing.js', 'single-portfolio.js'],
   },
   css: {
     sassGlob: './assets/css/src/**/*',
