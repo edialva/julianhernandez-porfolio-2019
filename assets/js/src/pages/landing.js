@@ -41,6 +41,7 @@ $('a[href*="#"]').on('click', function(e) {
 /**
  * Scroll Button
  */
+
 DOM_CACHE.$scroll_button.on('click', (e) => {
   $("html").velocity("scroll", { offset: `0px`, mobileHA: false });
 });

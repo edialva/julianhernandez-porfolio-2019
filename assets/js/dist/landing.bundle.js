@@ -10,6 +10,7 @@ const DOM_CACHE = {
   $skills: $('.skill'),
   $contact_info: $('section#contact .text'),
   $contact_form: $('section#contact .jh-contact-form'),
+  $scroll_top_btn: $('#scroll-button'),
 };
 
 const MOBILE_BREAKPOINTS = {
@@ -94,6 +95,17 @@ inView('section#contact')
     DOM_CACHE.$contact_form.velocity('fadeIn', {delay: 1100});
   });
 
+/**
+ * Scroll Button
+ */
+inView('section#footer')
+  .on('enter', el => {
+    DOM_CACHE.$scroll_top_btn.velocity('fadeIn', {easing: 'ease-in-out'});
+  })
+  .on('exit', el => {
+    DOM_CACHE.$scroll_top_btn.css('opacity', 0);
+  });
+
 },{"in-view":3,"velocity-animate":4}],2:[function(require,module,exports){
 const $ = window.jQuery;
 if(typeof $ !== 'function') return console.error('jQuery not loaded');
@@ -138,6 +150,7 @@ $('a[href*="#"]').on('click', function(e) {
 /**
  * Scroll Button
  */
+
 DOM_CACHE.$scroll_button.on('click', (e) => {
   $("html").velocity("scroll", { offset: `0px`, mobileHA: false });
 });

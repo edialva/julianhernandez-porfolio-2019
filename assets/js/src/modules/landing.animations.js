@@ -9,6 +9,7 @@ const DOM_CACHE = {
   $skills: $('.skill'),
   $contact_info: $('section#contact .text'),
   $contact_form: $('section#contact .jh-contact-form'),
+  $scroll_top_btn: $('#scroll-button'),
 };
 
 const MOBILE_BREAKPOINTS = {
@@ -91,4 +92,15 @@ inView('section#contact')
   .once('enter', el => {
     DOM_CACHE.$contact_info.velocity('fadeIn', {delay: 900});
     DOM_CACHE.$contact_form.velocity('fadeIn', {delay: 1100});
+  });
+
+/**
+ * Scroll Button
+ */
+inView('section#footer')
+  .on('enter', el => {
+    DOM_CACHE.$scroll_top_btn.velocity('fadeIn', {easing: 'ease-in-out'});
+  })
+  .on('exit', el => {
+    DOM_CACHE.$scroll_top_btn.css('opacity', 0);
   });
