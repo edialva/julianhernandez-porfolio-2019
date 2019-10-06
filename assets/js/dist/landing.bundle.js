@@ -127,12 +127,19 @@ DOM_CACHE.$mobile_menu_btn.on('click', menuHandler);
 DOM_CACHE.$mobile_menu_container.on('click', 'a', menuHandler);
 
 /**
+ * Smooth Scrolling on menu
+ */
+$('a[href*="#"]').on('click', function(e) {
+  e.preventDefault();
+  let offset = $($(this).attr('href')).offset().top;
+  $("html").velocity("scroll", { offset: `${offset}px`, mobileHA: false });
+});
+
+/**
  * Scroll Button
  */
 DOM_CACHE.$scroll_button.on('click', (e) => {
-
-  $("html, body").animate({ scrollTop: 0 }, "slow");
-
+  $("html").velocity("scroll", { offset: `0px`, mobileHA: false });
 });
 
 },{"../modules/landing.animations.js":1}],3:[function(require,module,exports){
