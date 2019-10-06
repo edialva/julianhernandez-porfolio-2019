@@ -782,6 +782,7 @@ body.single-portfolio article {
         margin-top: 15px; }
         body.single-portfolio article .container .meta ul.tech li {
           display: inline-block;
+          opacity: 0;
           font-weight: 300;
           padding: 8px 15px;
           border-radius: 5px;
