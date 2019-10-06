@@ -23,7 +23,7 @@ const MOBILE_BREAKPOINTS = {
 /**
  * Config inView
  */
-inView.threshold(0);
+inView.threshold(100);
 
 /**
  * Landing Section
@@ -42,9 +42,13 @@ DOM_CACHE.$landing_text
  * About Section
  */
 inView('section#about')
-  .on('enter', el => {
+  .once('enter', el => {
     // animate info
     DOM_CACHE.$about_info.velocity({translateX: 0, opacity: 1 });
+  });
+
+inView('.row .skills')
+  .once('enter', el => {
     // animate skills
     DOM_CACHE.$skill_container.velocity({opacity: 1}, {delay: 500});
     let delay = 1000;
@@ -77,7 +81,7 @@ inView('section#about')
  * Portfolio Section
  */
 inView('section#portfolio')
-  .on('enter', el => {
+  .once('enter', el => {
     $(el).velocity('fadeIn', {delay: 1000, duration: 1000});
   });
 
@@ -85,7 +89,7 @@ inView('section#portfolio')
  * Contact Section
  */
 inView('section#contact')
-  .on('enter', el => {
+  .once('enter', el => {
     DOM_CACHE.$contact_info.velocity('fadeIn', {delay: 900});
     DOM_CACHE.$contact_form.velocity('fadeIn', {delay: 1100});
   });

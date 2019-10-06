@@ -249,7 +249,6 @@ html, body {
   font-family: 'Oswald', sans-serif;
   font-smooth: antialiased;
   font-size: 16px;
-  overflow: auto;
   -webkit-overflow-scrolling: touch;
   overflow-scrolling: touch; }
 
