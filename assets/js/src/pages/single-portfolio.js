@@ -1,5 +1,5 @@
 const $ = window.jQuery;
-const inView = require('in-view');
+// const inView = require('in-view');
 require('velocity-animate');
 
 const DOM_CACHE = {
@@ -12,8 +12,6 @@ const DOM_CACHE = {
 /**
  * Config inView
  */
-inView.threshold(0);
-
 DOM_CACHE.$page_heading.velocity({height: '30vh'}, {easing: 'ease-in-out', duration: 1000});
 
 DOM_CACHE.$content_heading

@@ -23,26 +23,25 @@ const MOBILE_BREAKPOINTS = {
 /**
  * Config inView
  */
-inView.threshold(100);
+inView.threshold(250);
 
 /**
  * Landing Section
  */
-DOM_CACHE.$landing_text
-  .velocity({right: '0px', opacity: 1 }, {
-    begin: (elements) => {
-      el = elements[0];
-      // unhide text
-      el.style.display = 'table';
-    },
-    delay: 700
+inView('section#above-the-fold .center')
+  .on('enter', el => {
+        DOM_CACHE.$landing_text
+          .velocity({right: '0px', opacity: 1 }, {delay: 500});
+  })
+  .on('exit', el => {
+    DOM_CACHE.$landing_text.velocity('reverse');
   });
 
 /**
  * About Section
  */
 inView('section#about')
-  .once('enter', el => {
+  .on('enter', el => {
     // animate info
     DOM_CACHE.$about_info.velocity({translateX: 0, opacity: 1 });
   });

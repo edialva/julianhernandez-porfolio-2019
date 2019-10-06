@@ -344,6 +344,9 @@ section {
       text-transform: lowercase;
       font-weight: 300;
       margin: 0 0 0 15px; }
+      .main-menu .mobile-header-container h2.name a {
+        padding: 5px;
+        color: inherit; }
     .main-menu .mobile-header-container #mobile-menu-btn {
       width: 30px;
       margin-right: 20px;
@@ -584,7 +587,7 @@ a {
   justify-content: center;
   align-items: center; }
   #above-the-fold .center {
-    display: none;
+    display: table;
     opacity: 0;
     position: relative;
     right: 100px; }
