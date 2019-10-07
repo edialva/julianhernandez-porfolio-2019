@@ -771,6 +771,19 @@ body.single-portfolio article {
     body.single-portfolio article .container .meta {
       text-align: center;
       opacity: 0; }
+      body.single-portfolio article .container .meta a.project-link {
+        display: block;
+        margin: 20px auto;
+        height: 35px;
+        width: 90px;
+        background: #454545;
+        border-radius: 30px;
+        border: 2px solid #454545; }
+        body.single-portfolio article .container .meta a.project-link:hover {
+          background: #eee; }
+        body.single-portfolio article .container .meta a.project-link img {
+          position: relative;
+          top: 7px; }
       body.single-portfolio article .container .meta p {
         font-size: 1em; }
         body.single-portfolio article .container .meta p span {

@@ -20,6 +20,10 @@ block content
       
       .meta
         
+        if custom.project_url
+          a.project-link(href=custom.project_url title='Check out ' + get_the_title() + ' for yourself!' target="_blank")
+            img(src=template_directory_uri + '/assets/images/link_white.png')
+        
         if custom.year_completed
           p #[span Year:] #{custom.year_completed}
         
