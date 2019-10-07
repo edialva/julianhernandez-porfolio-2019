@@ -100,7 +100,7 @@ add_action('admin_init', 'jh_add_meta_boxes');
 
 function jh_save_details(){
   global $post;
-  update_post_meta($post->ID, 'year_completed_', $_POST['year_completed']);
+  update_post_meta($post->ID, 'year_completed', $_POST['year_completed']);
   update_post_meta($post->ID, 'role', $_POST['role']);
   update_post_meta($post->ID, 'background_color', $_POST['background_color']);
   update_post_meta($post->ID, 'environment', $_POST['environment']);
