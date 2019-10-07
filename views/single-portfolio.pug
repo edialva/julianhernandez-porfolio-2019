@@ -20,17 +20,21 @@ block content
       
       .meta
         
-        p #[span Year:] #{$custom['year_completed']}
+        if custom.year_completed
+          p #[span Year:] #{custom.year_completed}
         
-        p #[span Role:] #{$custom['role']}
-              
-        p
+        if custom.role
+          p #[span Role:] #{custom.role}
+        
+        if technologies
+                
+          p
+            
+            span Technologies Used:
           
-          span Technologies Used:
-        
-        ul.tech
-          each technology in technologies            
-            li= technology
+          ul.tech
+            each technology in technologies            
+              li= technology
       
       .the-content
         - the_content()
