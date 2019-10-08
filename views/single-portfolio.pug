@@ -4,8 +4,18 @@ block content
     
     .heading(style="background:#" + custom.background_color)
       
-      .logo
-        img(src=get_the_post_thumbnail_url(null, 'full'))
+      if logo_url
+      
+        .logo
+          img(src=logo_url)
+      
+      else
+        
+        //- use this element to hold title
+        .hide#project-title 
+          p 
+            - the_title()
+        p.title
       
     include inc/header.pug
   
@@ -22,7 +32,8 @@ block content
         
         if custom.project_url
           a.project-link(href=custom.project_url title='Check out ' + get_the_title() + ' for yourself!' target="_blank")
-            img(src=template_directory_uri + '/assets/images/link_white.png')
+            img(src=template_directory_uri + '/assets/images/link_white.svg')
+            .inline-block-helper
         
         if custom.year_completed
           p #[span Year:] #{custom.year_completed}

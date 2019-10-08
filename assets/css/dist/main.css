@@ -77,6 +77,21 @@ table {
   font-weight: 300;
   font-style: normal; }
 
+/**
+ * Images
+ * */
+body.single img.aligncenter {
+  display: table;
+  margin: 0 auto; }
+
+body.single img.alignright {
+  display: table;
+  margin-left: auto; }
+
+body.single img.alignleft {
+  display: table;
+  margin-right: auto; }
+
 .cta {
   border: 4px solid #51BBFE;
   font-size: 1.2em;
@@ -300,6 +315,14 @@ section {
  */
 .no-padding {
   padding: 0 !important; }
+
+.hide {
+  display: none; }
+
+.inline-block-helper {
+  display: inline-block;
+  height: 100%;
+  vertical-align: middle; }
 
 @media screen and (max-width: 725px) {
   html, body {
@@ -573,6 +596,9 @@ p {
 a {
   color: #5DFDCB; }
 
+strong {
+  font-weight: 700; }
+
 /**
  * All Page Styles
  * */
@@ -731,7 +757,8 @@ body.single-portfolio header .heading {
   min-height: 125px;
   display: flex;
   justify-content: center;
-  align-items: center; }
+  align-items: center;
+  background: #4A6DA8; }
   body.single-portfolio header .heading .logo {
     height: 100%;
     max-width: 300px;
@@ -742,6 +769,10 @@ body.single-portfolio header .heading {
     body.single-portfolio header .heading .logo img {
       max-width: 100%;
       max-height: 100%; }
+  body.single-portfolio header .heading p.title {
+    font-size: 2em;
+    letter-spacing: 3px;
+    color: #FFF; }
 
 body.single-portfolio article {
   padding: 4em 3em;
@@ -782,8 +813,10 @@ body.single-portfolio article {
         body.single-portfolio article .container .meta a.project-link:hover {
           background: #eee; }
         body.single-portfolio article .container .meta a.project-link img {
-          position: relative;
-          top: 7px; }
+          display: inline-block;
+          vertical-align: middle;
+          height: 10px;
+          width: auto; }
       body.single-portfolio article .container .meta p {
         font-size: 1em; }
         body.single-portfolio article .container .meta p span {

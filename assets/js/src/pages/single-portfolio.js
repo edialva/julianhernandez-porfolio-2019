@@ -1,6 +1,8 @@
 const $ = window.jQuery;
 // const inView = require('in-view');
+const Typed = require('typed.js');
 require('velocity-animate');
+require('../modules/mobile-menu');
 
 const DOM_CACHE = {
   $page_heading: $('header .heading'),
@@ -9,6 +11,18 @@ const DOM_CACHE = {
   $techs: $('.meta ul.tech li'),
   $the_content: $('article .the-content'),
 };
+
+// animate title if not logo
+if($('p.title').length){
+
+  let typeTitle = new Typed('p.title', {
+    stringsElement: '#project-title',
+    typeSpeed: 30,
+    startDelay: 1500
+  });
+
+}
+
 
 /**
  * Config inView

@@ -11,6 +11,9 @@ $data['technologies'] = array_map(function($term){
   return $term->name;
 }, wp_get_post_terms($post->ID, 'technologies', $args));
 
+// get featured image url
+$data['logo_url'] = get_the_post_thumbnail_url($post->ID, 'full');
+
 get_header();
 
 echo $pug->renderFile('single-portfolio', $data, $options);
