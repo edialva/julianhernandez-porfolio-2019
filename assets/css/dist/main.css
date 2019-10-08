@@ -652,7 +652,8 @@ section#portfolio {
 
 .portfolio-container {
   max-width: 100%;
-  overflow: hidden; }
+  overflow: hidden;
+  font-size: 0px; }
   .portfolio-container .portfolio-item {
     background-color: #51BBFE;
     flex: 1 0 0;
@@ -708,7 +709,7 @@ section#portfolio {
       bottom: 15px;
       background: #454545;
       color: #FFF;
-      font-size: 0.8em; }
+      font-size: 0.8rem; }
 
 /**
  * Contact
