@@ -14,18 +14,10 @@ const DOM_CACHE = {
   $scroll_top_btn: $('#scroll-button'),
 };
 
-const MOBILE_BREAKPOINTS = {
-
-  '1': '725px',
-
-  '2': '550px',
-
-};
-
 /**
- * Config inView
+ * Configure inView
  */
-inView.threshold(250);
+inView.threshold(0.3);
 
 /**
  * Landing Section
@@ -49,7 +41,7 @@ inView('section#about')
   });
 
 inView('.row .skills')
-  .once('enter', el => {
+  .on('enter', el => {
     // animate skills
     DOM_CACHE.$skill_container.velocity({opacity: 1}, {delay: 500});
     let delay = 1000;
@@ -76,15 +68,21 @@ inView('.row .skills')
       }, delay);
       delay = delay + 150;
     });
+  })
+  .on('exit', el => {
+
+    DOM_CACHE.$skill_container.velocity('reverse');
+    DOM_CACHE.$skills.each(function(){
+      let $this = $(this);
+      let $bar = $this.find('.bar');
+      $bar.velocity('reverse');
+    });
+
   });
 
 /**
  * Portfolio Section
  */
-// inView('section#portfolio')
-//   .once('enter', el => {
-//     $(el).velocity('fadeIn', {delay: 1000, duration: 1000});
-//   });
 inView('section#portfolio .portfolio-container')
   .once('enter', el => {
     let techDelay = 0;
@@ -100,15 +98,14 @@ inView('section#portfolio .portfolio-container')
     });
 
   });
-// $(DOM_CACHE.$portfolio_items[0]).velocity('fadeIn');
 
 /**
  * Contact Section
  */
 inView('section#contact')
   .once('enter', el => {
-    DOM_CACHE.$contact_info.velocity('fadeIn', {delay: 900});
-    DOM_CACHE.$contact_form.velocity('fadeIn', {delay: 1100});
+    DOM_CACHE.$contact_info.velocity('fadeIn', {delay: 300});
+    DOM_CACHE.$contact_form.velocity('fadeIn', {delay: 600});
   });
 
 /**
