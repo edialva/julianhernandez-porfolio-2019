@@ -647,9 +647,6 @@ strong {
 /**
  * Portfolio
  * */
-section#portfolio {
-  opacity: 0; }
-
 .portfolio-container {
   max-width: 100%;
   overflow: hidden;
@@ -662,7 +659,8 @@ section#portfolio {
     justify-content: center;
     align-items: center;
     position: relative;
-    width: 33.3%; }
+    width: 33.3%;
+    opacity: 0; }
     .portfolio-container .portfolio-item:before {
       content: '';
       float: left;

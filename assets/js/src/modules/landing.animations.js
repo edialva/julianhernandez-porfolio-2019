@@ -7,6 +7,7 @@ const DOM_CACHE = {
   $about_info: $('section#about .row.to-animate'),
   $skill_container: $('.row .skills'),
   $skills: $('.skill'),
+  $portfolio_items: $('.portfolio-item'),
   $contact_info: $('section#contact .text'),
   $contact_form: $('section#contact .jh-contact-form'),
   $scroll_top_btn: $('#scroll-button'),
@@ -79,10 +80,26 @@ inView('.row .skills')
 /**
  * Portfolio Section
  */
-inView('section#portfolio')
+// inView('section#portfolio')
+//   .once('enter', el => {
+//     $(el).velocity('fadeIn', {delay: 1000, duration: 1000});
+//   });
+inView('section#portfolio .portfolio-container')
   .once('enter', el => {
-    $(el).velocity('fadeIn', {delay: 1000, duration: 1000});
+    let techDelay = 0;
+    DOM_CACHE.$portfolio_items.each(function(){
+      let $this = $(this);
+      $this
+        .velocity({opacity: 1}, {delay: techDelay, duration: 400,
+          begin: el => {
+            // $(el).css('display', 'inline-flex');
+        }})
+        .velocity({scale: 1});
+      techDelay = techDelay + 200;
+    });
+
   });
+// $(DOM_CACHE.$portfolio_items[0]).velocity('fadeIn');
 
 /**
  * Contact Section
