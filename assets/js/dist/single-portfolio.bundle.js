@@ -35,12 +35,24 @@ require('velocity-animate');
 require('../modules/mobile-menu');
 
 const DOM_CACHE = {
+  $logo: $('.logo'),
   $page_heading: $('header .heading'),
   $content_heading: $('article h1'),
   $meta: $('article .meta'),
   $techs: $('.meta ul.tech li'),
   $the_content: $('article .the-content'),
 };
+
+DOM_CACHE.$page_heading.velocity({height: '30vh'}, {easing: 'ease-in-out', duration: 900});
+
+// pop in logo if present
+if(DOM_CACHE.$logo.length){
+
+  DOM_CACHE.$logo
+    .velocity({opacity: 1, scale: 1.2}, {duration: 200, delay: 900})
+    .velocity({scale: 1});
+
+}
 
 // animate title if not logo
 if($('p.title').length){
@@ -52,12 +64,6 @@ if($('p.title').length){
   });
 
 }
-
-
-/**
- * Config inView
- */
-DOM_CACHE.$page_heading.velocity({height: '30vh'}, {easing: 'ease-in-out', duration: 1000});
 
 DOM_CACHE.$content_heading
   .velocity({opacity: 1, scale: 1.1}, {delay: 1000, duration: 300})
