@@ -6,9 +6,8 @@ use Pug\Pug;
 
 $options = [
   'paths' => [
-    '/Users/julian1729/Documents/LOCAL_SITES/julianhernandez2019/wp-content/themes/julianhernandez/views/',
-  ],
-  // 'expressionLanguage' => 'php',
+    JH_THEME_PATH . '/views/',
+  ]
 ];
 
 return $pug = new Pug($options);
