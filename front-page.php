@@ -38,7 +38,12 @@ $data['skills'] = get_field('skills', 'option');
 $data['social_media_links'] = get_field('social_media', 'option');
 
 // get social media link
-$data['resume_url'] = get_field('resume', 'option');
+$resumeAttachmentId = get_field('resume', 'option');
+$data['resume'] = array(
+  'title' => get_the_title($resumeAttachmentId),
+  'url' => wp_get_attachment_url($resumeAttachmentId),
+  'filename' => basename(get_attached_file($resumeAttachmentId)),
+);
 
 get_header();
 

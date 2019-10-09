@@ -90,7 +90,8 @@ block content
             a(href="mailto:hernandez.julian17@gmail.com") hernandez.julian17@gmail.com
           
           .downloads
-            +pdfDownload('Julian_Hernandez_FullStackWebDeveloper.pdf', resume_url, 'Julian_Hernandez_FullStackWebDeveloper.pdf')
+            if resume
+              +pdfDownload(resume.title, resume.url, resume.filename)
         
       .col-2.block.jh-contact-form !{contact_form}
         
