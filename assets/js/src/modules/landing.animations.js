@@ -2,6 +2,8 @@ const $ = window.jQuery;
 const inView = require('in-view');
 require('velocity-animate');
 
+const breakpoints = require('./mobile-breakpoints');
+
 const DOM_CACHE = {
   $landing_text: $('section#above-the-fold .center'),
   $about_info: $('section#about .row.to-animate'),
@@ -13,10 +15,26 @@ const DOM_CACHE = {
   $scroll_top_btn: $('#scroll-button'),
 };
 
+let configInview = () => {
+  let windowWidth = $(window).width();
+  if(windowWidth >= breakpoints[1]){
+    inView.threshold(0.2);
+    inView.offset(0);
+  }else if (windowWidth <= breakpoints[1]){
+    // disable threshold on thinner devices,
+    // due to longer divs
+    inView.offset(100);
+    inView.threshold(0);
+  }
+
+};
+
 /**
- * Configure inView
+ * Configure inView based on window width
  */
-inView.threshold(0.3);
+configInview();
+$(window).resize(configInview);
+
 
 /**
  * Landing Section
@@ -42,7 +60,7 @@ inView('section#about')
 inView('.row .skills')
   .on('enter', el => {
     // animate skills
-    DOM_CACHE.$skill_container.velocity({opacity: 1}, {delay: 500});
+    DOM_CACHE.$skill_container.velocity({opacity: 1});
     let delay = 1000;
     let duration = 500;
     DOM_CACHE.$skills.each(function() {
